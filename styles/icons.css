@@ -1,0 +1,181 @@
+.fast-facts {
+  padding: 50px;
+}
+
+.fast-facts-intro {
+  margin-bottom: 50px;
+}
+
+.fast-facts-text h3 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 30px 0px 10px 0px;
+}
+
+.core-values-text h3 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 30px 0px 10px 0px;
+}
+
+@media (max-width: 700px) {
+  .core-values-text {
+    font-size: 40px;
+    padding-bottom: 20px;
+  }
+}
+
+.fast-facts-text p {
+  font-size: 16px;
+  margin: 0px 0px 15px 0px;
+  text-align: justify;
+}
+
+.fast-facts-icons {
+  display: grid;
+  grid-column-gap: 0px;
+  grid-row-gap: 30px;
+  --columns: 4; /* re-define the number of columns */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(calc(100% / var(--columns)), 1fr)
+  );
+  justify-content: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .fast-facts-icons {
+    --columns: 2;
+  }
+}
+
+.fact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-icon-container {
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle;
+  margin: 0 0 20px;
+  border: 2px solid silver;
+  font-size: 4em;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  -o-border-radius: 2em;
+  -moz-border-radius: 2em;
+  -webkit-border-radius: 2em;
+  -ms-border-radius: 2em;
+  border-radius: 2em;
+}
+
+.about-icon-container:hover {
+  background-color: rgb(4, 62, 121);
+}
+
+.about-icon {
+  display: block;
+  line-height: inherit;
+  position: relative;
+  text-align: center;
+  left: 32px;
+  bottom: 5px;
+  color: silver;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+.about-icon-sec {
+  display: block;
+  line-height: inherit;
+  position: relative;
+  text-align: center;
+  left: 36px;
+  bottom: 5px;
+  color: silver;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+.about-icon-globe {
+  display: block;
+  line-height: inherit;
+  position: relative;
+  text-align: center;
+  left: 33px;
+  bottom: 5px;
+  color: silver;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+.about-icon-trophy {
+  display: block;
+  line-height: inherit;
+  position: relative;
+  text-align: center;
+  left: 28px;
+  bottom: 5px;
+  color: silver;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+.about-icon-users {
+  display: block;
+  line-height: inherit;
+  position: relative;
+  text-align: center;
+  left: 23px;
+  bottom: 5px;
+  color: silver;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+.about-icon:hover,
+.about-icon-users:hover,
+.about-icon-trophy:hover,
+.about-icon-globe:hover,
+.about-icon-sec:hover {
+  color: white;
+}
+
+.about-icon-text {
+  text-align: center;
+}
+
+.about-icon-text h5 {
+  font-size: 15px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.about-icon-text p {
+  font-size: 14px;
+  margin: 10px 0px 0px 0px;
+}

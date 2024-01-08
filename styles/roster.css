@@ -1,0 +1,170 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.bro-navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-style: solid 2px rgb(218, 202, 166);
+}
+
+.bro-navbar a {
+  text-decoration: none;
+  color: rgb(4, 62, 121);
+}
+
+.bro-items {
+  box-sizing: border-box;
+  width: calc(20% - 10px); /* 20% width with 10px margin */
+  margin: 10px;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* hide the unused classes with background-color of the page, added this so navbar is in line and no hover effect */
+
+#empty-class:hover {
+  background-color: #f8f8f8;
+}
+
+.bro-navbar a:hover {
+  color: white;
+}
+
+.bro-items:hover {
+  color: white;
+  background-color: rgb(4, 62, 121);
+}
+
+.brothers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  padding: 0 10%;
+  margin-bottom: 5%;
+}
+
+.class-name h1 {
+  margin-top: 40px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-decoration: underline rgb(4, 62, 121);
+}
+
+.class-name h3 {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.brother-card {
+  position: relative;
+  width: calc((100% - 20%) / 3 - 20px);
+  margin: 10px;
+  overflow: hidden;
+
+  font-weight: 550;
+}
+
+.brother-card:hover {
+  transition: all 1s ease;
+}
+
+.brother-card img {
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: 0 0;
+  transition: all 0.3s ease;
+}
+
+.brother-info,
+.brother-shade {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  padding-top: 2%;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.brother-name {
+  font-size: 1rem;
+  /*white-space: nowrap;*/
+}
+
+.brother-description {
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 5px auto;
+}
+
+.brother-card:hover .brother-description {
+  opacity: 1;
+}
+
+.brother-info {
+  color: rgb(218, 202, 166);
+  background-color: rgba(4, 62, 121, 0.65);
+
+  height: 5em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brother-shade {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.brother-card {
+  overflow: hidden;
+}
+
+.brother-card img {
+  transition: all 0.5s ease;
+}
+
+.brother-info,
+.brother-shade {
+  transition: all 0.5s ease;
+}
+
+.brother-card:hover img {
+  transform: translateY(-5%) scale(1.1);
+}
+
+.brother-card:hover .member-shade,
+.brother-card:hover .brother-info {
+  height: 12em;
+}
+
+.brother-info:hover {
+  transition: all 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 1024px) {
+  .brother-card {
+    width: calc((100% - 20%) / 2 - 20px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .brother-card {
+    width: calc(100% - 20px);
+  }
+
+  .brother-name {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+}

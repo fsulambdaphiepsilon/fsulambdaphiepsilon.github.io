@@ -1,0 +1,173 @@
+.timeline {
+  /*margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: rgb(4, 62, 121);*/
+  position: relative;
+  max-width: 1000px;
+  margin: 100px auto;
+}
+
+.cont {
+  padding: 10px 50px;
+  position: relative;
+  width: 50%;
+  animation: movedown 1s linear forwards;
+  opacity: 0;
+}
+
+@keyframes movedown {
+  0% {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+/*change number of child and seconds depending on number of events*/
+.cont:nth-child(2) {
+  animation-delay: 1s;
+}
+.cont:nth-child(3) {
+  animation-delay: 2s;
+}
+.cont:nth-child(4) {
+  animation-delay: 3s;
+}
+.cont:nth-child(5) {
+  animation-delay: 4s;
+}
+.cont:nth-child(6) {
+  animation-delay: 5s;
+}
+.cont:nth-child(7) {
+  animation-delay: 6s;
+}
+.cont:nth-child(8) {
+  animation-delay: 7s;
+}
+
+.txt {
+  padding: 20px 30px;
+  background: white;
+  position: relative;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.left-container {
+  right: 10%;
+}
+
+.right-container {
+  left: 50%;
+}
+
+.cont img {
+  position: absolute;
+  width: 40px;
+  border-radius: 50%;
+  right: -20px;
+  top: 32px;
+  z-index: 10;
+  background-color: white;
+}
+
+.right-container img {
+  left: -20px;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background: white;
+  top: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: -1;
+  animation: moveline 8s linear forwards; /*change seconds to equal amount of events on timeline */
+}
+
+@keyframes moveline {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+.txt h2 {
+  font-weight: 600;
+}
+
+.txt h4 {
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.left-container-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid white;
+  right: -14px;
+}
+
+.right-container-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid white;
+  left: -14px;
+}
+
+@media screen and (max-width: 600px) {
+  .timeline {
+    margin: 50px auto;
+  }
+  .timeline::after {
+    left: 31px;
+  }
+  .container {
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 25px;
+  }
+  .txt {
+    font-size: 13px;
+  }
+  .txt h4 {
+    margin-bottom: 10px;
+  }
+  .left-container {
+    left: 30px;
+  }
+  .right-container {
+    left: 30px;
+  }
+
+  .left-container img,
+  .right-container img {
+    left: -20px;
+  }
+
+  .left-container-arrow,
+  .right-container-arrow {
+    border-right: 15px solid white;
+    border-left: 0;
+    left: -15px;
+  }
+}
