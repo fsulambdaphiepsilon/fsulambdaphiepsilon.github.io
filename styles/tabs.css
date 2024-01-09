@@ -72,6 +72,11 @@ p {
 }
 
 @media (max-width: 600px) {
+  .tabs-container {
+    margin-left: 0;
+    flex-wrap: wrap;
+  }
+
   .tab {
     width: 100%; /* Full width for tabs on smaller screens */
     margin-right: 0;
