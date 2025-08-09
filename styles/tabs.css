@@ -187,7 +187,7 @@ p {
 .right-col {
   flex: 1;
   text-align: center;
-  margin-left: 40px;     /* space from the image */
+  margin-left: 200px;     /* space from the image */
   padding-right: 20px;   /* space from right edge of container */
 }
 
@@ -212,6 +212,7 @@ p {
     max-width: 100%;
   }
 }
+
 
 
 
