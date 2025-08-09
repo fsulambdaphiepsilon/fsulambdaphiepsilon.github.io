@@ -69,6 +69,7 @@ p {
 
 .text-content {
   text-align: left;
+  height: auto;
   margin-left: 40px;
 }
 
@@ -109,4 +110,5 @@ p {
     margin-left: 100px;
   }
 }
+
 
