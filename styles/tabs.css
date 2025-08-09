@@ -156,7 +156,7 @@ p {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 40px;
+  justify-content: space-between;
 }
 
 /* Left column: image + header + empty paragraph */
@@ -186,7 +186,9 @@ p {
 /* Right column: text */
 .right-col {
   flex: 1;
-  text-align: left;
+  text-align: center;
+  margin-left: 40px;     /* space from the image */
+  padding-right: 20px;   /* space from right edge of container */
 }
 
 .right-col p {
@@ -210,6 +212,7 @@ p {
     max-width: 100%;
   }
 }
+
 
 
 
