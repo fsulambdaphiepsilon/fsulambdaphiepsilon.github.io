@@ -113,41 +113,24 @@ p {
   }
 }*/
 
-/* =========================
-   tabs.css — full replacement
-   ========================= */
-
-/* ensure predictable box-sizing */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* container for tabs header */
 .tabs-container {
   display: flex;
   margin-top: 40px;
   margin-left: 40px;
 }
 
-/* the UL with tab buttons */
 .tabs {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   background-color: #f8f8f8;
-  position: relative;
-  z-index: 5; /* keep tabs visually above content */
 }
 
-/* individual tab button */
 .tab {
   cursor: pointer;
   padding: 15px;
   background-color: #f8f8f8;
-  user-select: none;
 }
 
 .tab:hover {
@@ -160,106 +143,75 @@ p {
   color: white;
 }
 
-/* tab content panels */
+/* Content wrapper */
 .tab-content {
-  display: none;                 /* hidden by default */
-  overflow: visible;             /* allow content to expand (no clipping) */
+  display: none;
   border: 1px solid #f8f8f8;
   border-radius: 0 0 5px 5px;
-  text-align: center;
   background-color: #f8f8f8;
-  padding: 24px 20px;            /* safe padding so header can't overlap content */
-  margin-top: 0;                 /* explicit reset in case other CSS changed it */
-  position: relative;
-  z-index: 1;
+  padding: 20px;
 }
 
-/* show the active tab */
 .tab-content.active {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;       /* start content at the top — NOT centered */
-  justify-content: space-between;
-  gap: 20px;
+  align-items: flex-start;
+  gap: 40px;
 }
 
-/* images in panels */
-.tab-content img {
+/* Left column: image + header + empty paragraph */
+.left-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 500px;
+}
+
+.left-col img {
+  max-width: 100%;
   height: auto;
-  margin: 0;                     /* avoid extra vertical shift */
-  align-self: flex-start;
+  margin-bottom: 15px;
 }
 
-/* reset headings & paragraphs inside tabs to avoid negative margins hiding them */
-.tab-content h2,
-.tab-content h3,
-.tab-content p {
-  margin: 0 0 12px 0;            /* clear top margins, keep bottom spacing */
-  padding: 0;
-  line-height: 1.35;
+.left-col h2 {
+  margin: 0 0 10px 0;
+  text-align: center;
 }
 
-/* tweak heading style */
-.tab-content h2 {
-  font-size: 1.6rem;
+.left-col p {
+  margin: 0;
+  height: 1em; /* empty space placeholder */
+}
+
+/* Right column: text */
+.right-col {
+  flex: 1;
   text-align: left;
-  width: 100%;
 }
 
-/* textual block area */
-.text-content {
-  text-align: left;
-  margin-left: 10px;
-  flex: 1;                       /* allow text to take remaining width */
+.right-col p {
+  margin-top: 0;
+  line-height: 1.5;
 }
 
-/* If your DOM places tab-content immediately after .tabs-container,
-   this ensures there is a small gap so the tab header doesn't cover the top */
-.tabs-container + .tab-content {
-  padding-top: 20px;
-}
-
-/* responsive: stack for small screens */
-@media (max-width: 600px) {
-  .tabs-container {
-    margin-left: 0;
-    flex-wrap: wrap;
-  }
-
-  .tab {
-    width: 100%;
-    margin-right: 0;
-  }
-
+/* Responsive stacking */
+@media (max-width: 800px) {
   .tab-content.active {
     flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-    padding-bottom: 40px;
+    gap: 20px;
   }
-
-  .tab-content img {
+  
+  .left-col,
+  .right-col {
     max-width: 100%;
-    margin: 0 0 16px 0;
   }
 
-  .text-content h2 {
-    margin-top: 0;
-    text-align: center;
-  }
-
-  .text-content p {
-    margin-top: 10px;
-    height: auto;
-    text-align: center;
-  }
-
-  .text-content {
-    margin-left: 0;
-    padding: 0 12px;
+  .left-col img {
+    max-width: 100%;
   }
 }
+
+
 
 
 
