@@ -221,7 +221,7 @@ p {
   text-align: center;
 }
 
-.emphasize {
+.org-header {
   font-size: 18px;       /* change text size */
   font-weight: bold;     /* bold text */
   text-decoration: underline;
@@ -229,6 +229,7 @@ p {
   color: #000;           /* text color */
   line-height: 1.4;      /* improves readability */
 }
+
 
 
 
