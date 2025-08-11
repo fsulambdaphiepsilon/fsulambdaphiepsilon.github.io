@@ -216,20 +216,19 @@ p {
 
 .leadership-description {
   margin-top: 10px;
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 5px;
+  margin-bottom: 60px;
   text-align: center;
 }
 
 .org-header {
-  font-size: 28px;       /* change text size */
+  font-size: 26px;       /* change text size */
   font-weight: bold;     /* bold text */
   text-decoration: underline;
   text-align: center;
   color: #000;           /* text color */
   line-height: 1.4;      /* improves readability */
 }
+
 
 
 
