@@ -202,17 +202,22 @@ p {
   .tab-content.active {
     flex-direction: column;
     gap: 20px;
+    align-items: center; /* centers both columns */
   }
   
   .left-col,
   .right-col {
     max-width: 100%;
+    margin-left: 0; /* reset margin */
+    padding-right: 0; /* reset padding */
+    text-align: center;
   }
 
   .left-col img {
     max-width: 100%;
   }
 }
+
 
 
 
