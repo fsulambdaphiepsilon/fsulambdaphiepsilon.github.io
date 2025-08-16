@@ -7,7 +7,13 @@ function hideMenu() {
 }
 
 const slides = document.querySelectorAll(".slide");
+const slides = document.querySelectorAll(".slide1");
+const slides = document.querySelectorAll(".slide2");
+const slides = document.querySelectorAll(".slide3");
 let currentSlide = 0;
+let currentSlide1 = 0;
+let currentSlide2 = 0;
+let currentSlide3 = 0;
 
 function showSlide(index) {
     slides.forEach((slide, i) => {
@@ -26,7 +32,61 @@ function prevSlide() {
     showSlide(currentSlide);
 }
 
+function showSlide1(index) {
+    slides1.forEach((slide1, i) => {
+        const slideWidth1 = slide1.clientWidth;
+        slide1.style.transform = `translateX(-${index * slideWidth1}px)`;
+    });
+}
+
+function nextSlide1() {
+    currentSlide1 = (currentSlide1 + 1) % slides1.length;
+    showSlide1(currentSlide1);
+}
+
+function prevSlide1() {
+    currentSlide1 = (currentSlide1 - 1 + slides1.length) % slides1.length;
+    showSlide1(currentSlide1);
+}
+
+function showSlide2(index) {
+    slides2.forEach((slide2, i) => {
+        const slideWidth2 = slide2.clientWidth;
+        slide2.style.transform = `translateX(-${index * slideWidth2}px)`;
+    });
+}
+
+function nextSlide2() {
+    currentSlide2 = (currentSlide2 + 1) % slides2.length;
+    showSlide2(currentSlide2);
+}
+
+function prevSlide2() {
+    currentSlide2 = (currentSlide2 - 1 + slides2.length) % slides2.length;
+    showSlide2(currentSlide2);
+}
+
+function showSlide3(index) {
+    slides3.forEach((slide3, i) => {
+        const slideWidth3 = slide3.clientWidth;
+        slide3.style.transform = `translateX(-${index * slideWidth3}px)`;
+    });
+}
+
+function nextSlide3() {
+    currentSlide3 = (currentSlide3 + 1) % slides3.length;
+    showSlide3(currentSlide3);
+}
+
+function prevSlide3() {
+    currentSlide3 = (currentSlide3 - 1 + slides3.length) % slides3.length;
+    showSlide3(currentSlide3);
+}
+
 showSlide(currentSlide);
+showSlide1(currentSlide1);
+showSlide2(currentSlide2);
+showSlide3(currentSlide3);
 
 const faqs = document.querySelectorAll(".faq");
 
@@ -60,4 +120,5 @@ function showTab(tabId) {
 }
 
 // Show the default tab on page load
+
 showTab('tab1');
