@@ -7,9 +7,9 @@ function hideMenu() {
 }
 
 const slides = document.querySelectorAll(".slide");
-const slides = document.querySelectorAll(".slide1");
-const slides = document.querySelectorAll(".slide2");
-const slides = document.querySelectorAll(".slide3");
+const slides1 = document.querySelectorAll(".slide1");
+const slides2 = document.querySelectorAll(".slide2");
+const slides3 = document.querySelectorAll(".slide3");
 let currentSlide = 0;
 let currentSlide1 = 0;
 let currentSlide2 = 0;
@@ -122,3 +122,4 @@ function showTab(tabId) {
 // Show the default tab on page load
 
 showTab('tab1');
+
