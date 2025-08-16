@@ -221,25 +221,37 @@ p {
 
 
 
-/* Philanthropy tab styling */
+/* Philanthropy layout improvements */
+#tab4 .left-col {
+  align-items: flex-start;   /* align text to the left instead of center */
+  text-align: left; 
+  margin-left: 60px;         /* push content away from the left edge */
+  max-width: 60%;            /* allow text to take up more space */
+}
+
 #tab4 .left-col h2 {
-  font-size: 2.5em; /* make Philanthropy larger */
-  margin-bottom: 20px; /* add spacing below the heading */
+  font-size: 2.5em;
+  margin-bottom: 25px;       /* extra space below heading */
 }
 
 #tab4 .left-col p {
-  text-align: left;  /* align text left */
-  margin-top: 20px;  /* extra space above text */
-  line-height: 1.6;  /* improve readability */
+  line-height: 1.6;
+  margin-top: 15px;
+  max-width: 90%;            /* give paragraph wider area */
 }
 
-/* Ensure nmdp logo matches gallery sizing */
-#tab4 .right-col img[src*="nmdp-logo.png"] {
-  max-width: 500px;  /* same as gallery image constraint */
-  height: auto;
-  display: block;
-  margin: 20px auto; /* centers logo under gallery */
+/* Shrink gallery & logo on right side */
+#tab4 .right-col .gallery img {
+  max-width: 350px;          /* smaller than default 500px */
+  margin: 15px auto;
 }
+
+#tab4 .right-col img[src*="nmdp-logo.png"] {
+  max-width: 250px;          /* keep logo smaller than gallery */
+  margin: 20px auto 0 auto;  /* centered below gallery */
+  display: block;
+}
+
 
 
 
