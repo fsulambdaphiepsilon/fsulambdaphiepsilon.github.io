@@ -221,13 +221,15 @@ p {
 
 
 
-/* Philanthropy layout improvements */
 #tab4 .left-col {
-  align-items: flex-start;   /* align text to the left instead of center */
-  text-align: left; 
-  margin-left: 60px;         /* push content away from the left edge */
-  max-width: 60%;            /* allow text to take up more space */
+  align-items: flex-start;   /* keep text left-aligned */
+  justify-content: center;   /* vertically center content */
+  text-align: left;
+  margin-left: 60px;
+  max-width: 60%;
+  height: 100%;
 }
+
 
 #tab4 .left-col h2 {
   font-size: 2.5em;
@@ -252,6 +254,11 @@ p {
   display: block;
 }
 
+
+/* Center Philanthropy text + heading vertically */
+#tab4.tab-content.active {
+  align-items: center;   /* vertically center left and right columns */
+}
 
 
 
