@@ -469,7 +469,7 @@ img {
 .next {
   right: 0;
 }
-
+/* 
 .prev1,
 .next1 {
   cursor: pointer;
@@ -528,7 +528,7 @@ img {
 
 .next3 {
   right: 0;
-}
+}*/
 
 @media screen and (max-width: 700px) {
   .gallery {
@@ -540,7 +540,7 @@ img {
     height: 250px;
   }
 
-  .gallery1 {
+/*  .gallery1 {
     flex-direction: column;
   }
 
@@ -565,8 +565,9 @@ img {
   .slider3 {
     width: 400px;
     height: 250px;
-  }
+  }*/
 }
+
 
 
 
