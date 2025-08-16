@@ -245,7 +245,7 @@ p {
 
 #tab4 .right-col img[src*="nmdp-logo.png"] {
   max-width: 250px;          /* keep logo smaller than gallery */
-  margin: 10px auto 0 auto;  /* centered below gallery */
+  margin: 15px auto 0 auto;  /* centered below gallery */
   display: block;
 }
 
@@ -254,6 +254,7 @@ p {
 #tab4.tab-content.active {
   align-items: center;   /* vertically center left and right columns */
 }
+
 
 
 
