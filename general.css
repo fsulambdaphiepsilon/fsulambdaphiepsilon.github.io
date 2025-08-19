@@ -568,6 +568,11 @@ img {
   }*/
 }
 
+.logo {
+  max-width: 200px;   /* max size */
+  width: 100%;        /* scales down for smaller screens */
+  height: auto;
+}
 
 
 
