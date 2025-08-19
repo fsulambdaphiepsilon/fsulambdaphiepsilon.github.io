@@ -77,10 +77,11 @@ html {
 
 .brother-card img {
   width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  object-position: 0 0;
-  transition: all 0.3s ease;
+  height: 250px;     /* pick the uniform height you want */
+  object-fit: cover; /* crops oversized parts instead of squishing */
+  object-position: center;
+  display: block;
+  transition: all 0.5s ease;
 }
 
 .brother-info,
@@ -168,3 +169,4 @@ html {
     white-space: nowrap;
   }
 }
+
