@@ -18,7 +18,7 @@
   min-height: 100vh;
   width: 100%;
   background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
-    url(images/installs.jpg);
+    url(images/aura-graphic.png);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -573,6 +573,7 @@ img {
   width: 100%;        /* scales down for smaller screens */
   height: auto;
 }
+
 
 
 
