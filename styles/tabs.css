@@ -255,6 +255,12 @@ p {
   align-items: center;   /* vertically center left and right columns */
 }
 
+.logo {
+  max-width: 200px;   /* max size */
+  width: 100%;        /* scales down for smaller screens */
+  height: auto;
+}
+
 
 
 
