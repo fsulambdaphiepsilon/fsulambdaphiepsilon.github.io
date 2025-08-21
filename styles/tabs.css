@@ -256,6 +256,17 @@ p {
 }
 
 
+.map-container {
+  width: 100%;
+  max-width: 700px; /* keeps it from getting too huge */
+  margin: 0 auto;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+}
+
 
 
 
