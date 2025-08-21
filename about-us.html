@@ -385,7 +385,9 @@
           to leadership, service, and brotherhood.</p>
       </div>
       <div class="right-col">
-        <p></p>
+        <div class="map-container">
+          <div id="map"></div>
+        </div>
       </div>
     </div>
 
@@ -463,9 +465,134 @@
         </div>
       </section>
     </div>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://datamaps.github.io/scripts/datamaps.world.min.js"></script>
+
+    <script>
+      // Brothers by country
+      const brothersByCountry = {
+        "CAN": ["Alex Nguyen", "David Tran"],
+        "BRA": ["Lucas Silva"],
+        "CHN": ["Wei Zhang"],
+        "IND": ["Ravi Patel", "Arjun Sharma"],
+        "LAO": ["Somchai Vong"],
+        "VNM": ["Minh Le", "Bao Nguyen"],
+        "KHM": ["Sokha Kim"],
+        "THA": ["Niran Phan"],
+        "BGD": ["Rahul Ahmed"],
+        "PHL": ["Juan Dela Cruz"],
+        "JPN": ["Hiroshi Tanaka"],
+        "KOR": ["Kim Min-ho"],
+        "SLE": ["Mohamed Kamara"],
+        "TWN": ["Chen Wei"],
+        "GHA": ["Kwame Mensah"],
+        "HTI": ["Jean Pierre"],
+        "PAN": ["Carlos Herrera"],
+        "BEL": ["Louis Dupont"],
+        "SLV": ["Miguel Hernandez"]
+      };
+
+      // Flags
+      const flags = {
+        "CAN": "https://flagcdn.com/ca.svg",
+        "BRA": "https://flagcdn.com/br.svg",
+        "CHN": "https://flagcdn.com/cn.svg",
+        "IND": "https://flagcdn.com/in.svg",
+        "LAO": "https://flagcdn.com/la.svg",
+        "VNM": "https://flagcdn.com/vn.svg",
+        "KHM": "https://flagcdn.com/kh.svg",
+        "THA": "https://flagcdn.com/th.svg",
+        "BGD": "https://flagcdn.com/bd.svg",
+        "PHL": "https://flagcdn.com/ph.svg",
+        "JPN": "https://flagcdn.com/jp.svg",
+        "KOR": "https://flagcdn.com/kr.svg",
+        "SLE": "https://flagcdn.com/sl.svg",
+        "TWN": "https://flagcdn.com/tw.svg",
+        "GHA": "https://flagcdn.com/gh.svg",
+        "HTI": "https://flagcdn.com/ht.svg",
+        "PAN": "https://flagcdn.com/pa.svg",
+        "BEL": "https://flagcdn.com/be.svg",
+        "SLV": "https://flagcdn.com/sv.svg"
+      };
+
+      const dataset = {};
+      Object.keys(brothersByCountry).forEach(code => {
+        dataset[code] = { fillKey: "highlight" };
+      });
+
+      const map = new Datamap({
+        element: document.getElementById("map"),
+        projection: "mercator",
+        fills: { defaultFill: "#d3d3d3", highlight: "royalblue" },
+        data: dataset,
+        geographyConfig: {
+          highlightFillColor: "#043E79",
+          highlightBorderColor: "white",
+          popupOnHover: false
+        }
+      });
+
+      // Tooltip
+      const tooltip = d3.select("body").append("div")
+        .attr("class", "datamaps-hoverover")
+        .style("position", "absolute")
+        .style("display", "none");
+
+      let locked = false;
+
+      d3.selectAll(".datamap path").on("mouseover", function(d) {
+        if (locked) return;
+        bringToFront(this);
+        showTooltip(d3.event, d);
+      }).on("mousemove", function(d) {
+        if (locked) return;
+        moveTooltip(d3.event);
+      }).on("mouseout", function() {
+        if (locked) return;
+        tooltip.style("display", "none");
+      }).on("click", function(d) {
+        locked = true;
+        bringToFront(this);
+        showTooltip(d3.event, d);
+      });
+
+      d3.select("body").on("click", function() {
+        if (locked) {
+          const target = d3.event.target.closest("path");
+          if (!target) {
+            locked = false;
+            tooltip.style("display", "none");
+          }
+        }
+      });
+
+      function showTooltip(event, d) {
+        const brothers = brothersByCountry[d.id] || [];
+        const flag = flags[d.id] ? `<img src="${flags[d.id]}" alt="flag">` : "";
+        tooltip.html(`${flag}<strong>${d.properties.name}</strong><br/>Brothers:<br/>${brothers.join("<br/>")}`)
+               .style("display", "block");
+        moveTooltip(event);
+      }
+
+      function moveTooltip(event) {
+        tooltip.style("left", (event.pageX + 15) + "px")
+               .style("top", (event.pageY - 30) + "px");
+      }
+
+      function bringToFront(element) {
+        element.parentNode.appendChild(element);
+      }
+
+      // ✅ Make the map responsive
+      window.addEventListener("resize", () => {
+        map.resize();
+      });
+    </script>
     <script src="app.js"></script>
   </body>
 </html>
+
 
 
 
