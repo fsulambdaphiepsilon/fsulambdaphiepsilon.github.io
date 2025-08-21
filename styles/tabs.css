@@ -258,15 +258,40 @@ p {
 
 .map-container {
   width: 100%;
-  max-width: 700px; /* keeps it from getting too huge */
+  max-width: 700px;
   margin: 0 auto;
 }
 
-svg {
+#map {
+  position: relative;
   width: 100%;
-  height: auto;
+  height: 0;
+  padding-bottom: 60%; /* aspect ratio (3:2) */
 }
 
+.datamap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Tooltip box */
+.datamaps-hoverover {
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 8px;
+  background: white;
+  color: #333;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+  text-align: center;
+}
+.datamaps-hoverover img {
+  max-width: 40px;
+  display: block;
+  margin: 0 auto 5px auto;
+}
 
 
 
