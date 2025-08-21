@@ -385,32 +385,198 @@
           to leadership, service, and brotherhood.</p>
       </div>
       <div class="right-col">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
-          molestiae amet fugit, quaerat illo maxime accusantium laborum
-          explicabo a similique esse perspiciatis? Dolores quas tenetur maxime
-          cupiditate ipsa. Facilis itaque eos debitis ducimus placeat rem
-          voluptatem, ea optio ullam magnam hic modi. Cupiditate dolorum dicta
-          nisi facilis natus nam quaerat.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
-          molestiae amet fugit, quaerat illo maxime accusantium laborum
-          explicabo a similique esse perspiciatis? Dolores quas tenetur maxime
-          cupiditate ipsa. Facilis itaque eos debitis ducimus placeat rem
-          voluptatem, ea optio ullam magnam hic modi. Cupiditate dolorum dicta
-          nisi facilis natus nam quaerat.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
-          molestiae amet fugit, quaerat illo maxime accusantium laborum
-          explicabo a similique esse perspiciatis? Dolores quas tenetur maxime
-          cupiditate ipsa. Facilis itaque eos debitis ducimus placeat rem
-          voluptatem, ea optio ullam magnam hic modi. Cupiditate dolorum dicta
-          nisi facilis natus nam quaerat.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
-          molestiae amet fugit, quaerat illo maxime accusantium laborum
-          explicabo a similique esse perspiciatis? Dolores quas tenetur maxime
-          cupiditate ipsa. Facilis itaque eos debitis ducimus placeat rem
-          voluptatem, ea optio ullam magnam hic modi. Cupiditate dolorum dicta
-          nisi facilis natus nam quaerat.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
-          molestiae amet fugit, quaerat illo maxime accusantium laborum
-          explicabo a similique esse perspiciatis? Dolores quas tenetur maxime
-          cupiditate ipsa. Facilis itaque eos debitis ducimus placeat rem
-          voluptatem, ea optio ullam magnam hic modi. Cupiditate dolorum dicta
-          nisi facilis natus nam quaerat.</p> <!-- empty paragraph placeholder -->
+        <head>
+        <meta charset="UTF-8">
+        <title>Lambda Phi Epsilon | Cultural Roots</title>
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+        <script src="https://d3js.org/topojson.v1.min.js"></script>
+        <script src="https://datamaps.github.io/scripts/datamaps.world.min.js"></script>
+        <style>
+          body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: white; /* plain background */
+          }
+          h1 {
+            margin: 20px;
+            color: #043E79;
+          }
+          #map {
+            position: relative;
+            width: 90%;
+            max-width: 1000px;
+            height: 600px;
+            margin: auto;
+          }
+      
+          /* Tooltip box */
+          .datamaps-hoverover {
+            font-size: 16px;
+            padding: 15px;
+            min-width: 180px;
+            max-width: 250px;
+            border-radius: 8px;
+            background: white;
+            color: #333;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+            text-align: center;
+            line-height: 1.4em;
+            pointer-events: auto; /* allow clicks */
+          }
+          .datamaps-hoverover img {
+            display: block;
+            max-width: 60px;
+            margin: 0 auto 8px auto;
+          }
+      
+          /* Country hover zoom effect */
+          .datamap path {
+            transition: transform 0.25s ease;
+            transform-origin: center;
+            transform-box: fill-box; /* ensures scaling around bounding box */
+            cursor: pointer;
+          }
+          .datamap path:hover {
+            transform: scale(1.3);
+            stroke: black;
+            stroke-width: 1.5px;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>Our Cultural Roots 🌍</h1>
+        <div id="map"></div>
+      
+        <script>
+          // Example data: Brothers by country
+          const brothersByCountry = {
+            "CAN": ["Alex Nguyen", "David Tran"],
+            "BRA": ["Lucas Silva"],
+            "CHN": ["Wei Zhang"],
+            "IND": ["Ravi Patel", "Arjun Sharma"],
+            "LAO": ["Somchai Vong"],
+            "VNM": ["Minh Le", "Bao Nguyen"],
+            "KHM": ["Sokha Kim"],
+            "THA": ["Niran Phan"],
+            "BGD": ["Rahul Ahmed"],
+            "PHL": ["Juan Dela Cruz"],
+            "JPN": ["Hiroshi Tanaka"],
+            "KOR": ["Kim Min-ho"],
+            "SLE": ["Mohamed Kamara"],
+            "TWN": ["Chen Wei"],
+            "GHA": ["Kwame Mensah"],
+            "HTI": ["Jean Pierre"],
+            "PAN": ["Carlos Herrera"],
+            "BEL": ["Louis Dupont"],
+            "SLV": ["Miguel Hernandez"]
+          };
+      
+          // Flags by country
+          const flags = {
+            "CAN": "https://flagcdn.com/ca.svg",
+            "BRA": "https://flagcdn.com/br.svg",
+            "CHN": "https://flagcdn.com/cn.svg",
+            "IND": "https://flagcdn.com/in.svg",
+            "LAO": "https://flagcdn.com/la.svg",
+            "VNM": "https://flagcdn.com/vn.svg",
+            "KHM": "https://flagcdn.com/kh.svg",
+            "THA": "https://flagcdn.com/th.svg",
+            "BGD": "https://flagcdn.com/bd.svg",
+            "PHL": "https://flagcdn.com/ph.svg",
+            "JPN": "https://flagcdn.com/jp.svg",
+            "KOR": "https://flagcdn.com/kr.svg",
+            "SLE": "https://flagcdn.com/sl.svg",
+            "TWN": "https://flagcdn.com/tw.svg",
+            "GHA": "https://flagcdn.com/gh.svg",
+            "HTI": "https://flagcdn.com/ht.svg",
+            "PAN": "https://flagcdn.com/pa.svg",
+            "BEL": "https://flagcdn.com/be.svg",
+            "SLV": "https://flagcdn.com/sv.svg"
+          };
+      
+          // Build dataset
+          const dataset = {};
+          Object.keys(brothersByCountry).forEach(code => {
+            dataset[code] = { fillKey: "highlight" };
+          });
+      
+          // Initialize map
+          const map = new Datamap({
+            element: document.getElementById("map"),
+            projection: "mercator",
+            fills: {
+              defaultFill: "#d3d3d3", // gray
+              highlight: "royalblue"
+            },
+            data: dataset,
+            geographyConfig: {
+              highlightFillColor: "#043E79",
+              highlightBorderColor: "white",
+              popupOnHover: false, // disable default hover popups
+            }
+          });
+      
+          // Custom tooltip div
+          const tooltip = d3.select("body").append("div")
+            .attr("class", "datamaps-hoverover")
+            .style("position", "absolute")
+            .style("display", "none");
+      
+          let locked = false; // track if tooltip is locked open
+      
+          // Handle interactions
+          d3.selectAll(".datamap path").on("mouseover", function(d) {
+            if (locked) return; // skip if locked open
+            bringToFront(this);
+            showTooltip(d3.event, d);
+          }).on("mousemove", function(d) {
+            if (locked) return;
+            moveTooltip(d3.event);
+          }).on("mouseout", function() {
+            if (locked) return;
+            tooltip.style("display", "none");
+          }).on("click", function(d) {
+            locked = true;
+            bringToFront(this);
+            showTooltip(d3.event, d);
+          });
+      
+          // Click anywhere else to close tooltip
+          d3.select("body").on("click", function() {
+            if (locked) {
+              const target = d3.event.target.closest("path");
+              if (!target) {
+                locked = false;
+                tooltip.style("display", "none");
+              }
+            }
+          });
+      
+          function showTooltip(event, d) {
+            const brothers = brothersByCountry[d.id] || [];
+            const flag = flags[d.id] ? `<img src="${flags[d.id]}" alt="flag">` : "";
+            tooltip.html(`
+              ${flag}
+              <strong>${d.properties.name}</strong><br/>
+              Brothers:<br/>
+              ${brothers.join("<br/>")}
+            `)
+            .style("display", "block");
+            moveTooltip(event);
+          }
+      
+          function moveTooltip(event) {
+            tooltip.style("left", (event.pageX + 15) + "px")
+                   .style("top", (event.pageY - 30) + "px");
+          }
+      
+          function bringToFront(element) {
+            element.parentNode.appendChild(element); // move path to end of group (on top)
+          }
+        </script>
+      </body>
       </div>
     </div>
 
@@ -491,6 +657,7 @@
     <script src="app.js"></script>
   </body>
 </html>
+
 
 
 
