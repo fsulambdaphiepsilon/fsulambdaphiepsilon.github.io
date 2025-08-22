@@ -510,41 +510,53 @@
     
         // Brother data by country - UPDATE THIS
         const brothersByCountry = {
-            "USA": ["Joe", "Robert"],
+            "USA": ["#41 Brendan “Bald So Hard” Davis", "#49 Carl “Kung FOOd Hustle” Zimmermann", 
+                    "#57 Sean “Wack-It-Ralph” Garis", "#64 Gabe “PRIÐÊ” Pfeuffer-Ferguson", "#65 Sean “MR. WORLDWHY’D” Faletti"],
           
-            "VNM": ["#78 Tony “QUI-GON JIT” Ho", "#83 Calvin “Nguyen-Ter Soldier” Nguyen"],
+            "VNM": ["#42 David “HUNgy games” Duong", 
+                    "#45 Steven “BOO!Kage” Nguyen", "#46 Alan “Yo-Yo Pa” Le", "#47 Chandler “Pu Pu Hakusho” Pham", 
+                    "#54 Andy “SharkCUTIE” Tran", "#58 Max “Yo-Yo Ma” Le", "#60 Tyler “ILLegally Blonde” Nguyen", 
+                    "#62 Damion “re-DOO” Huynh", "#64 Gabe “PRIÐÊ” Pfeuffer-Ferguson", "#67 Johnny “ReTest” Le",
+                    "#68 Brooklyn “ChoppeD Stick” Le", "#78 Tony “QUI-GON JIT” Ho", "#83 Calvin “Nguyen-Ter Soldier” Nguyen"],
           
-            "PHL": ["#73 Greg “MR. RIGHT-SIDE” Regala", "#74 James “Twerkules” Tordecillas",
+            "PHL": ["#43 Cullen “WAPpad” Hemsouvanh", "#44 Jeremiah “CAP'n crunch” Josafat", 
+                    "#48 Duncan “PRIma Donda” Runas", "#49 Carl “Kung FOOd Hustle” Zimmermann", "#56 Donovan “cLitto-riZZ” Del Rosario", 
+                    "#63 Ian “throAt nOTe” Javelosa", "#73 Greg “MR. RIGHT-SIDE” Regala", "#74 James “Twerkules” Tordecillas",
                     "#76 Vinny “My 2nd Cousin” Arce", "#77 Richyie “JOOkbox” Gonzaga", "#87 Raiden “homunchulus” Quibang"],
           
-            "KOR": ["#84 Chase “WON-EYED” Nosari"],
+            "KOR": ["#51 Felipe “Guerrilla Grip” Min", 
+                    "#61 'Michael' “Sheesh The Man” Yilmaz", "#66 Noah “PE3Nocchio” Kim", "#84 Chase “WON-EYED” Nosari"],
           
-            "CHN": ["#82 Charlie “squidwuARD” Lu", "#82 Charlie “squidwuARD” Lu", "#82 Charlie “squidwuARD” Lu", "#82 Charlie “squidwuARD” Lu", 
-                    "#82 Charlie “squidwuARD” Lu", "#69 Ethan “SHANGHAI’D” Moy", "#72 Eric “GERMY” Lin", "#75 Ivan “Hotel vROOm Srvx” Zheng", 
+            "CHN": ["#82 Charlie “squidwuARD” Lu", "#82 Charlie “squidwuARD” Lu", "#82 Charlie “squidwuARD” Lu", "#53 Kenny “Des++Cito” Su", 
+                    "#59 Jake “Spoopy” Liu", "#69 Ethan “SHANGHAI’D” Moy", "#72 Eric “GERMY” Lin", "#75 Ivan “Hotel vROOm Srvx” Zheng", 
                     "#81 Brandon “SKYwaLker” Liu", "#82 Charlie “squidwuARD” Lu", "#88 Andrew “PoliTOED” Zhang", "#89 Henry “mAeSTro” Zheng", ],
           
-            "IND": ["#70 Danny “BALLjHIT” Alex",
+            "IND": ["#55: Ishaan “PeeKABoomS” Verma", "#65 Sean “MR. WORLDWHY’D” Faletti", "#70 Danny “BALLjHIT” Alex",
                     "#80 Neil “ËYË SPYED” Jhala", "#85 Ribav “LeGrounded” Olety", "#86 Mann “LOE-FI’D” Patel"],
           
-            "JPN": ["Hiroshi Tanaka"],
-            "THA": ["Niran Phan"],
-            "LAO": ["Somchai Vong"],
-            "KHM": ["Sokha Kim"],
+            "JPN": ["#57 Sean “Wack-It-Ralph” Garis"],
+            "THA": ["#41 Brendan “Bald So Hard” Davis"],
+            "LAO": ["#43 Cullen “WAPpad” Hemsouvanh"],
+            "KHM": ["#67 Johnny “ReTest” Le"],
             "BGD": ["#71 Moinul “THE ROCKSLIDE” Islam"],
             "CAN": ["Alex Nguyen", "David Tran"],
-            "BRA": ["Lucas Silva"],
+            "BRA": ["#50 Vitor “MarcO Pollo” De Muelenaere", "#51 Felipe “Guerrilla Grip” Min"],
             "TWN": ["Chen Wei"],
             "SLE": ["#79 Salieu “WazOWCHIE” Jalloh"],
             "GHA": ["#79 Salieu “WazOWCHIE” Jalloh"],
-            "HTI": ["Jean Pierre"],
-            "PAN": ["Carlos Herrera"],
-            "BEL": ["Louis Dupont"],
+            "HTI": ["#52 Jeffrey “Lt. But-Quack” Philippe"],
+            "PAN": ["#53 Kenny “Des++Cito” Su"],
+            "BEL": ["#50 Vitor “MarcO Pollo” De Muelenaere"],
             "SLV": ["Miguel Hernandez"],
             "IDN": ["#77 Richyie “JOOkbox” Gonzaga"],
-            "IRL": ["#73 Greg “MR. RIGHT-SIDE” Regala"],
+            "IRL": ["#66 Noah “PE3Nocchio” Kim", "#73 Greg “MR. RIGHT-SIDE” Regala"],
             "NOR": ["#73 Greg “MR. RIGHT-SIDE” Regala"],
-            "VEN": ["#69 Ethan “SHANGHAI’D” Moy"]
-          
+            "VEN": ["#69 Ethan “SHANGHAI’D” Moy"],
+            "DEU": ["#66 Noah “PE3Nocchio” Kim"],
+            "SGP": ["#65 Sean “MR. WORLDWHY’D” Faletti"],
+            "PRI": ["#62 Damion “re-DOO” Huynh"],
+            "TUR": ["#61 'Michael' “Sheesh The Man” Yilmaz"],
+            "RUS": ["#61 'Michael' “Sheesh The Man” Yilmaz"]
         };
     
         const countryFlags = {
@@ -571,7 +583,12 @@
             "IRL": "https://flagcdn.com/ie.svg",
             "IDN": "https://flagcdn.com/id.svg", 
             "NOR": "https://flagcdn.com/no.svg",
-            "VEN": "https://flagcdn.com/ve.svg"
+            "VEN": "https://flagcdn.com/ve.svg",
+            "DEU": "https://flagcdn.com/de.svg",
+            "SGP": "https://flagcdn.com/sg.svg",
+            "PRI": "https://flagcdn.com/pr.svg",
+            "TUR": "https://flagcdn.com/tr.svg",
+            "RUS": "https://flagcdn.com/ru.svg"
         };
     
         // Function to get population count for a country
@@ -750,6 +767,7 @@
     </script>
   </body>
 </html>
+
 
 
 
