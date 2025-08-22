@@ -232,7 +232,6 @@ p {
 
 
 #tab4 .left-col h2 {
-  font-family: 'Georgia', serif;
   font-size: 2.5em;
   font-weight: bold;
   margin-bottom: 25px;       /* extra space below heading */
@@ -461,6 +460,7 @@ p {
     overflow-x: hidden;
     box-sizing: border-box;
 }
+
 
 
 
