@@ -239,7 +239,6 @@ p {
 }
 
 #tab4 .left-col p {
-  font-family: 'Trebuchet MS', sans-serif;
   line-height: 1.6;
   margin-top: 15px;
   max-width: 90%;            /* give paragraph wider area */
@@ -275,7 +274,6 @@ p {
 }
 
 #tab5 .left-col p {
-  font-family: 'Trebuchet MS', sans-serif;
   line-height: 1.6;
   margin-top: 15px;
   max-width: 90%;            /* give paragraph wider area */
@@ -463,6 +461,7 @@ p {
     overflow-x: hidden;
     box-sizing: border-box;
 }
+
 
 
 
