@@ -260,7 +260,7 @@ p {
   justify-content: center;   /* vertically center content */
   text-align: left;
   margin-left: 60px;
-  max-width: 60%;
+  max-width: 50%;
   height: 100%;
 }
 
@@ -458,6 +458,7 @@ p {
     overflow-x: hidden;
     box-sizing: border-box;
 }
+
 
 
 
