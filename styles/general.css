@@ -406,14 +406,14 @@ svg {
 }
 
 .slider1 {
-  width: 95vw; /* Almost full viewport width */
-  height: 85vh; /* Most of viewport height */
+  width: 95vw;
+  height: 85vh;
   border-radius: 5px;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: hidden; /* Keep this as hidden */
   transform: translateY(0%);
   display: flex;
-  align-items: center;
+  align-items: stretch; /* Changed from center */
   position: relative;
 }
 
@@ -449,8 +449,12 @@ svg {
 .slide1 {
   flex: 0 0 100%;
   transition: transform 1s ease;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-width: 100%; /* Ensure each slide takes full width */
 }
-
 .slide2 {
   flex: 0 0 100%;
   transition: transform 1s ease;
@@ -469,6 +473,7 @@ img {
   width: 100%;
   height: 70%;
   object-fit: cover;
+  display: block;
 }
 
 /* Add caption styles */
@@ -624,6 +629,7 @@ img {
   width: 100%;        /* scales down for smaller screens */
   height: auto;
 }
+
 
 
 
