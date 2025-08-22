@@ -14,6 +14,7 @@ let currentSlide = 0;
 let currentSlide1 = 0;
 let currentSlide2 = 0;
 let currentSlide3 = 0;
+let captionTimeout;
 
 function showSlide(index) {
     slides.forEach((slide, i) => {
@@ -102,6 +103,48 @@ document.querySelectorAll('.flip-container').forEach(container => {
     });
 });
 
+function setupCaptionHovers() {
+    const slides = document.querySelectorAll('.slide1');
+    
+    slides.forEach(slide => {
+        const caption = slide.querySelector('.caption');
+        
+        if (caption) {
+            // Show caption on hover
+            slide.addEventListener('mouseenter', () => {
+                // Clear any existing timeout
+                if (captionTimeout) {
+                    clearTimeout(captionTimeout);
+                }
+                
+                // Show caption
+                caption.classList.add('show');
+            });
+            
+            // Hide caption after delay when mouse leaves
+            slide.addEventListener('mouseleave', () => {
+                // Set timeout to hide after 2 seconds
+                captionTimeout = setTimeout(() => {
+                    caption.classList.remove('show');
+                }, 2000);
+            });
+            
+            // If user hovers over caption itself, keep it visible
+            caption.addEventListener('mouseenter', () => {
+                if (captionTimeout) {
+                    clearTimeout(captionTimeout);
+                }
+            });
+            
+            caption.addEventListener('mouseleave', () => {
+                captionTimeout = setTimeout(() => {
+                    caption.classList.remove('show');
+                }, 2000);
+            });
+        }
+    });
+}
+
 function showTab(tabId) {
     // Hide all tab content
     const tabContents = document.querySelectorAll('.tab-content');
@@ -117,9 +160,18 @@ function showTab(tabId) {
     // Activate the clicked tab
     const activeTab = document.querySelector(`.tab[onclick="showTab('${tabId}')"]`);
     activeTab.classList.add('active');
+
+    // Initialize slider and caption hovers when tab1 is shown
+    if (tabId === 'tab1') {
+        setTimeout(() => {
+            initializeSlider1();
+            setupCaptionHovers(); // Add this line
+        }, 100);
+    }
 }
 
 // Show the default tab on page load
 
 showTab('tab1');
+
 
