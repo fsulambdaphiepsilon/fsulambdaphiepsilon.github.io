@@ -256,20 +256,50 @@ p {
 }
 
 
+/* Culture Map Styles - Fixed Overflow */
 .map-title {
     color: #043E79;
     font-size: 1.5em;
     margin-bottom: 15px;
     font-weight: bold;
+    text-align: center;
 }
 
 #culturalMap {
     position: relative;
     width: 100%;
+    max-width: 100%; /* Ensure it doesn't exceed container */
     height: 400px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden; /* Hide any overflow */
+    margin: 0 auto; /* Center the map */
+}
+
+/* Fix for the right column to prevent overflow */
+#tab5 .right-col {
+    flex: 1;
+    max-width: 50%;
+    min-width: 300px; /* Minimum width for usability */
+    text-align: center;
+    margin-left: 20px;
+    padding: 0 10px; /* Add some padding */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Ensure the SVG inside the map doesn't overflow */
+#culturalMap svg {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Fix the datamap container */
+.datamap {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
 }
 
 .datamaps-hoverover {
@@ -285,6 +315,7 @@ p {
     line-height: 1.4em !important;
     pointer-events: auto !important;
     border: 2px solid #043E79 !important;
+    z-index: 10000 !important;
 }
 
 .datamaps-hoverover img {
@@ -308,11 +339,12 @@ p {
     margin-top: 15px;
     font-size: 0.9em;
     color: #666;
+    text-align: center;
 }
 
 .legend-item {
     display: inline-block;
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 .legend-color {
@@ -324,11 +356,56 @@ p {
     border-radius: 3px;
 }
 
-@media (max-width: 900px) {
-    #culturalMap {
-        height: 300px;
+/* Enhanced responsive design */
+@media (max-width: 1200px) {
+    #tab5 .right-col {
+        max-width: 55%;
+        margin-left: 15px;
     }
 }
+
+@media (max-width: 900px) {
+    #tab5.tab-content.active {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #tab5 .left-col, 
+    #tab5 .right-col {
+        max-width: 100%;
+        margin: 0;
+        padding: 10px;
+    }
+    
+    #culturalMap {
+        height: 300px;
+        max-width: 95%; /* Slightly smaller on mobile */
+    }
+    
+    .legend-item {
+        display: block;
+        margin: 5px 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    #culturalMap {
+        height: 250px;
+        max-width: 90%;
+    }
+    
+    .map-title {
+        font-size: 1.2em;
+    }
+}
+
+/* Ensure the tab content doesn't overflow */
+#tab5.tab-content {
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
 
 
 
