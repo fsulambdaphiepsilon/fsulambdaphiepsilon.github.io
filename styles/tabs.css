@@ -232,11 +232,14 @@ p {
 
 
 #tab4 .left-col h2 {
+  font-family: 'Georgia', serif;
   font-size: 2.5em;
+  font-weight: bold;
   margin-bottom: 25px;       /* extra space below heading */
 }
 
 #tab4 .left-col p {
+  font-family: 'Trebuchet MS', sans-serif;
   line-height: 1.6;
   margin-top: 15px;
   max-width: 90%;            /* give paragraph wider area */
@@ -266,11 +269,13 @@ p {
 
 
 #tab5 .left-col h2 {
+  font-weight: bold;
   font-size: 2.5em;
   margin-bottom: 25px;       /* extra space below heading */
 }
 
 #tab5 .left-col p {
+  font-family: 'Trebuchet MS', sans-serif;
   line-height: 1.6;
   margin-top: 15px;
   max-width: 90%;            /* give paragraph wider area */
@@ -458,6 +463,7 @@ p {
     overflow-x: hidden;
     box-sizing: border-box;
 }
+
 
 
 
