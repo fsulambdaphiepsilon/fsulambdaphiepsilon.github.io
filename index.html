@@ -307,8 +307,21 @@
           }
 
           // Add events
+          const monthDay = `${String(month+1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
+
+          // Check for specific year events (YYYY-MM-DD)
           if (events[fullDate]) {
             events[fullDate].forEach(ev => {
+              const evDiv = document.createElement("span");
+              evDiv.classList.add("event");
+              evDiv.textContent = ev.title;
+              div.appendChild(evDiv);
+            });
+          }
+          
+          // Check for yearly recurring events (MM-DD)
+          if (events[monthDay]) {
+            events[monthDay].forEach(ev => {
               const evDiv = document.createElement("span");
               evDiv.classList.add("event");
               evDiv.textContent = ev.title;
@@ -338,6 +351,7 @@
     <script src="app.js"></script>
   </body>
 </html>
+
 
 
 
