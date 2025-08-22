@@ -258,14 +258,13 @@ nav {
 
 .about-col:first-child {
   flex: 2; /* Text takes up more space */
-  margin-left: 8%; /* Some left space */
-  margin-right: 3%; /* Small gap between text and image */
-  align-items: flex-start;
+  margin-left: 11%; /* Some left space */
+  margin-right: 2%; /* Small gap between text and image */
 }
 
 .about-col:last-child {
   flex: 1; /* Image takes less space */
-  margin-right: 5%; /* Small right margin */
+  margin-right: 11%; /* Small right margin */
 }
 
 .about-col img {
@@ -587,6 +586,7 @@ img {
   width: 100%;        /* scales down for smaller screens */
   height: auto;
 }
+
 
 
 
