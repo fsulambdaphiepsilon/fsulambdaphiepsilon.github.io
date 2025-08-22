@@ -269,7 +269,7 @@ p {
     position: relative;
     width: 90%;
     max-width: 450px;
-    height: 400px;
+    height: 250px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -434,6 +434,7 @@ p {
     overflow-x: hidden;
     box-sizing: border-box;
 }
+
 
 
 
