@@ -256,41 +256,80 @@ p {
 }
 
 
-.map-container {
+.map-title {
+    color: #043E79;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+#culturalMap {
+    position: relative;
     width: 100%;
     height: 400px;
-    position: relative;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-
-#map {
-    width: 100%;
-    height: 100%;
-}
-
-
-.datamap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-}
-
 
 .datamaps-hoverover {
-  font-size: 14px;
-  padding: 10px;
-  border-radius: 8px;
-  background: white;
-  color: #333;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
-  text-align: center;
+    font-size: 14px !important;
+    padding: 12px !important;
+    min-width: 160px !important;
+    max-width: 220px !important;
+    border-radius: 8px !important;
+    background: white !important;
+    color: #333 !important;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.3) !important;
+    text-align: center !important;
+    line-height: 1.4em !important;
+    pointer-events: auto !important;
+    border: 2px solid #043E79 !important;
 }
+
 .datamaps-hoverover img {
-  max-width: 40px;
-  display: block;
-  margin: 0 auto 5px auto;
+    display: block !important;
+    max-width: 40px !important;
+    margin: 0 auto 8px auto !important;
+    border-radius: 4px !important;
 }
+
+.datamap path {
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+.datamap path:hover {
+    stroke: #043E79 !important;
+    stroke-width: 2px !important;
+}
+
+.map-legend {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.legend-item {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.legend-color {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    vertical-align: middle;
+    border-radius: 3px;
+}
+
+@media (max-width: 900px) {
+    #culturalMap {
+        height: 300px;
+    }
+}
+
 
 
 
