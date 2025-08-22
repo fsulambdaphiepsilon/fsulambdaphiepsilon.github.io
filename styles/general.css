@@ -485,15 +485,15 @@ img {
   right: 0;
   background: rgba(0, 0, 0, 0.8);
   color: white;
-  padding: 20px;
+  padding: 30px; /* Increased from 20px */
   box-sizing: border-box;
-  opacity: 0; /* Hidden by default */
+  opacity: 0;
   transition: opacity 0.3s ease-in-out;
-  pointer-events: none; /* Don't interfere with hover */
+  pointer-events: none;
   
   /* Dynamic height based on content */
   min-height: fit-content;
-  max-height: 40%; /* Don't take more than 40% of image */
+  max-height: 50%; /* Increased from 40% */
   overflow-y: auto;
 }
 
@@ -504,14 +504,15 @@ img {
 
 .caption h2, .caption h3 {
   margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 1.5rem;
+  margin-bottom: 15px; /* Increased spacing */
+  font-size: 2rem; /* Increased from 1.5rem */
+  font-weight: bold;
 }
 
 .caption p {
   margin: 0;
-  line-height: 1.5;
-  font-size: 1rem;
+  line-height: 1.6; /* Increased line spacing */
+  font-size: 1.2rem; /* Increased from 1rem */
 }
 
 
@@ -643,6 +644,7 @@ img {
   width: 100%;        /* scales down for smaller screens */
   height: auto;
 }
+
 
 
 
