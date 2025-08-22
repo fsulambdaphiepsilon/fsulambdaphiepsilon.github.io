@@ -84,6 +84,12 @@ function prevSlide3() {
     showSlide3(currentSlide3);
 }
 
+function initializeSlider1() {
+    if (slides1.length > 0) {
+        showSlide1(0); // Show first slide
+    }
+}
+
 showSlide(currentSlide);
 showSlide1(currentSlide1);
 showSlide2(currentSlide2);
@@ -173,5 +179,6 @@ function showTab(tabId) {
 // Show the default tab on page load
 
 showTab('tab1');
+
 
 
