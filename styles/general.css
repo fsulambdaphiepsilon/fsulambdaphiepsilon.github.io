@@ -258,6 +258,7 @@ nav {
 .about-col img {
     max-width: 300px;
     max-height: 400px; 
+    margin-left: 20px; /* Additional shift for the image itself */
     width: 100%; 
     height: auto; 
     object-fit: cover; /* Controls how image fits in container */
@@ -271,6 +272,16 @@ nav {
 .about-col p {
   padding: 15px 0 25px;
   color: black; /* Center text horizontally in each column */
+}
+
+.about-col:first-child {
+    padding-left: 60px; /* More space for text */
+    padding-right: 15px;
+}
+
+.about-col:last-child {
+    padding-left: 0; /* Remove left padding from image column */
+    margin-left: 40px; /* Shift entire image column right */
 }
 
 .location {
@@ -574,6 +585,7 @@ img {
   width: 100%;        /* scales down for smaller screens */
   height: auto;
 }
+
 
 
 
