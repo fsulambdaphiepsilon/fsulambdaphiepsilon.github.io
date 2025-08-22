@@ -29,6 +29,9 @@
       integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
       crossorigin="anonymous"
     />
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://datamaps.github.io/scripts/datamaps.world.min.js"></script>
   </head>
   <body>
     <section class="header2">
@@ -385,11 +388,23 @@
           to leadership, service, and brotherhood.</p>
       </div>
       <div class="right-col">
-        <div class="map-container">
-          <div id="map"></div>
+        <div class="map-title">Our Cultural Roots 🌍</div>
+        <div id="culturalMap"></div>
+        <div class="map-legend">
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #043E79;"></span>
+                Brother Heritage
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #d3d3d3;"></span>
+                Other Countries
+            </div>
         </div>
-      </div>
+        <p style="font-size: 0.85em; color: #666; margin-top: 10px; font-style: italic;">
+            Click or hover over highlighted countries to see our brothers' cultural backgrounds
+        </p>
     </div>
+</div>
 
     <!-- Footer Section -->
     <div class="footer__container">
@@ -464,135 +479,204 @@
           </div>
         </div>
       </section>
-    </div>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/datamaps/0.5.9/datamaps.world.min.js"></script>
-
-    <script>
-      // Brothers by country
-      const brothersByCountry = {
-        "CAN": ["Alex Nguyen", "David Tran"],
-        "BRA": ["Lucas Silva"],
-        "CHN": ["Wei Zhang"],
-        "IND": ["Ravi Patel", "Arjun Sharma"],
-        "LAO": ["Somchai Vong"],
-        "VNM": ["Minh Le", "Bao Nguyen"],
-        "KHM": ["Sokha Kim"],
-        "THA": ["Niran Phan"],
-        "BGD": ["Rahul Ahmed"],
-        "PHL": ["Juan Dela Cruz"],
-        "JPN": ["Hiroshi Tanaka"],
-        "KOR": ["Kim Min-ho"],
-        "SLE": ["Mohamed Kamara"],
-        "TWN": ["Chen Wei"],
-        "GHA": ["Kwame Mensah"],
-        "HTI": ["Jean Pierre"],
-        "PAN": ["Carlos Herrera"],
-        "BEL": ["Louis Dupont"],
-        "SLV": ["Miguel Hernandez"]
-      };
-
-      // Flags
-      const flags = {
-        "CAN": "https://flagcdn.com/ca.svg",
-        "BRA": "https://flagcdn.com/br.svg",
-        "CHN": "https://flagcdn.com/cn.svg",
-        "IND": "https://flagcdn.com/in.svg",
-        "LAO": "https://flagcdn.com/la.svg",
-        "VNM": "https://flagcdn.com/vn.svg",
-        "KHM": "https://flagcdn.com/kh.svg",
-        "THA": "https://flagcdn.com/th.svg",
-        "BGD": "https://flagcdn.com/bd.svg",
-        "PHL": "https://flagcdn.com/ph.svg",
-        "JPN": "https://flagcdn.com/jp.svg",
-        "KOR": "https://flagcdn.com/kr.svg",
-        "SLE": "https://flagcdn.com/sl.svg",
-        "TWN": "https://flagcdn.com/tw.svg",
-        "GHA": "https://flagcdn.com/gh.svg",
-        "HTI": "https://flagcdn.com/ht.svg",
-        "PAN": "https://flagcdn.com/pa.svg",
-        "BEL": "https://flagcdn.com/be.svg",
-        "SLV": "https://flagcdn.com/sv.svg"
-      };
-
-      const dataset = {};
-      Object.keys(brothersByCountry).forEach(code => {
-        dataset[code] = { fillKey: "highlight" };
-      });
-
-      const map = new Datamap({
-      element: document.getElementById("map"),
-      projection: "mercator",
-      responsive: true,  // Add this line
-      fills: { defaultFill: "#d3d3d3", highlight: "royalblue" },
-      data: dataset,
-      geographyConfig: {
-          highlightFillColor: "#043E79",
-          highlightBorderColor: "white",
-          popupOnHover: false
-      }
-  });
-
-      // Tooltip
-      const tooltip = d3.select("body").append("div")
-        .attr("class", "datamaps-hoverover")
-        .style("position", "absolute")
-        .style("display", "none");
-
-      let locked = false;
-
-      d3.selectAll(".datamap path").on("mouseover", function(d) {
-        if (locked) return;
-        bringToFront(this);
-        showTooltip(d3.event, d);
-      }).on("mousemove", function(d) {
-        if (locked) return;
-        moveTooltip(d3.event);
-      }).on("mouseout", function() {
-        if (locked) return;
-        tooltip.style("display", "none");
-      }).on("click", function(d) {
-        locked = true;
-        bringToFront(this);
-        showTooltip(d3.event, d);
-      });
-
-      d3.select("body").on("click", function() {
-        if (locked) {
-          const target = d3.event.target.closest("path");
-          if (!target) {
-            locked = false;
-            tooltip.style("display", "none");
-          }
-        }
-      });
-
-      function showTooltip(event, d) {
-        const brothers = brothersByCountry[d.id] || [];
-        const flag = flags[d.id] ? `<img src="${flags[d.id]}" alt="flag">` : "";
-        tooltip.html(`${flag}<strong>${d.properties.name}</strong><br/>Brothers:<br/>${brothers.join("<br/>")}`)
-               .style("display", "block");
-        moveTooltip(event);
-      }
-
-      function moveTooltip(event) {
-        tooltip.style("left", (event.pageX + 15) + "px")
-               .style("top", (event.pageY - 30) + "px");
-      }
-
-      function bringToFront(element) {
-        element.parentNode.appendChild(element);
-      }
-
-      // ✅ Make the map responsive
-      window.addEventListener("resize", () => {
-        map.resize();
-      });
-    </script>
+    </div>  
     <script src="app.js"></script>
+    <script>
+    // Culture Map Implementation 
+    (function() {
+        let culturalMap;
+        let mapInitialized = false;
+    
+        // Brother data by country - UPDATE THIS WITH YOUR ACTUAL BROTHERS
+        const brothersByCountry = {
+            "USA": ["Multiple Brothers"],
+            "VNM": ["Alan Le", "Max Le", "Minh Le", "Bao Nguyen"],
+            "PHL": ["Byron Solis", "Sean Faletti"],
+            "KOR": ["Damion Huynh"],
+            "CHN": ["Wei Zhang"],
+            "IND": ["Ravi Patel"],
+            "JPN": ["Hiroshi Tanaka"],
+            "THA": ["Niran Phan"],
+            "LAO": ["Somchai Vong"],
+            "KHM": ["Sokha Kim"],
+            "BGD": ["Rahul Ahmed"],
+            "CAN": ["Alex Nguyen", "David Tran"],
+            "BRA": ["Lucas Silva"],
+            "TWN": ["Chen Wei"],
+            "SLE": ["Mohamed Kamara"],
+            "GHA": ["Kwame Mensah"],
+            "HTI": ["Jean Pierre"],
+            "PAN": ["Carlos Herrera"],
+            "BEL": ["Louis Dupont"],
+            "SLV": ["Miguel Hernandez"]
+        };
+    
+        const countryFlags = {
+            "USA": "https://flagcdn.com/us.svg",
+            "VNM": "https://flagcdn.com/vn.svg",
+            "PHL": "https://flagcdn.com/ph.svg",
+            "KOR": "https://flagcdn.com/kr.svg",
+            "CHN": "https://flagcdn.com/cn.svg",
+            "IND": "https://flagcdn.com/in.svg",
+            "JPN": "https://flagcdn.com/jp.svg",
+            "THA": "https://flagcdn.com/th.svg",
+            "LAO": "https://flagcdn.com/la.svg",
+            "KHM": "https://flagcdn.com/kh.svg",
+            "BGD": "https://flagcdn.com/bd.svg",
+            "CAN": "https://flagcdn.com/ca.svg",
+            "BRA": "https://flagcdn.com/br.svg",
+            "TWN": "https://flagcdn.com/tw.svg",
+            "SLE": "https://flagcdn.com/sl.svg",
+            "GHA": "https://flagcdn.com/gh.svg",
+            "HTI": "https://flagcdn.com/ht.svg",
+            "PAN": "https://flagcdn.com/pa.svg",
+            "BEL": "https://flagcdn.com/be.svg",
+            "SLV": "https://flagcdn.com/sv.svg"
+        };
+    
+        function initializeCultureMap() {
+            const mapContainer = document.getElementById("culturalMap");
+            const tab5 = document.getElementById("tab5");
+            
+            if (!mapContainer || !tab5.classList.contains('active') || mapInitialized) {
+                return;
+            }
+    
+            // Clear any existing map
+            mapContainer.innerHTML = '';
+    
+            // Build dataset
+            const dataset = {};
+            Object.keys(brothersByCountry).forEach(code => {
+                dataset[code] = { fillKey: "heritage" };
+            });
+    
+            // Create map
+            culturalMap = new Datamap({
+                element: mapContainer,
+                projection: "mercator",
+                fills: {
+                    defaultFill: "#d3d3d3",
+                    heritage: "#043E79"
+                },
+                data: dataset,
+                geographyConfig: {
+                    highlightFillColor: "#2980b9",
+                    highlightBorderColor: "white",
+                    popupOnHover: false,
+                    borderWidth: 0.5,
+                    borderColor: "#fdfdfd"
+                },
+                responsive: true
+            });
+    
+            addCultureMapInteractivity();
+            mapInitialized = true;
+        }
+    
+        function addCultureMapInteractivity() {
+            const tooltip = d3.select("body").append("div")
+                .attr("class", "datamaps-hoverover")
+                .style("position", "absolute")
+                .style("display", "none")
+                .style("z-index", "10000");
+    
+            let locked = false;
+    
+            d3.selectAll(".datamap path").on("mouseover", function(d) {
+                if (locked || !brothersByCountry[d.id]) return;
+                showCultureTooltip(d3.event, d);
+            }).on("mousemove", function(d) {
+                if (locked || !brothersByCountry[d.id]) return;
+                moveCultureTooltip(d3.event);
+            }).on("mouseout", function() {
+                if (locked) return;
+                tooltip.style("display", "none");
+            }).on("click", function(d) {
+                if (!brothersByCountry[d.id]) return;
+                locked = true;
+                showCultureTooltip(d3.event, d);
+                d3.event.stopPropagation();
+            });
+    
+            d3.select("body").on("click", function() {
+                if (locked && !d3.event.target.closest(".datamaps-hoverover")) {
+                    locked = false;
+                    tooltip.style("display", "none");
+                }
+            });
+    
+            function showCultureTooltip(event, d) {
+                const brothers = brothersByCountry[d.id] || [];
+                const flag = countryFlags[d.id] ? `<img src="${countryFlags[d.id]}" alt="flag">` : "";
+                
+                tooltip.html(`
+                    ${flag}
+                    <strong>${d.properties.name}</strong><br/>
+                    <div style="margin-top: 8px; font-size: 12px; color: #666;">Brothers:</div>
+                    <div style="font-weight: bold; color: #043E79;">
+                        ${brothers.join("<br/>")}
+                    </div>
+                `)
+                .style("display", "block");
+                moveCultureTooltip(event);
+            }
+    
+            function moveCultureTooltip(event) {
+                const tooltipWidth = 200;
+                let left = event.pageX + 15;
+                let top = event.pageY - 30;
+    
+                if (left + tooltipWidth > window.innerWidth) {
+                    left = event.pageX - tooltipWidth - 15;
+                }
+                if (top < 0) {
+                    top = event.pageY + 15;
+                }
+    
+                tooltip.style("left", left + "px")
+                       .style("top", top + "px");
+            }
+        }
+    
+        // Hook into existing tab system without modifying showTab function
+        function setupCultureMapTrigger() {
+            // Listen for clicks on all tab elements
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(function(tab, index) {
+                tab.addEventListener('click', function() {
+                    // Check if this is the Culture tab (5th tab, index 4)
+                    if (index === 4) { // Culture tab is the 5th tab
+                        setTimeout(function() {
+                            mapInitialized = false; // Reset flag to allow re-initialization
+                            initializeCultureMap();
+                        }, 200);
+                    }
+                });
+            });
+        }
+    
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setupCultureMapTrigger();
+            
+            // Also try to initialize if Culture tab is already active
+            if (document.getElementById('tab5') && document.getElementById('tab5').classList.contains('active')) {
+                setTimeout(initializeCultureMap, 500);
+            }
+        });
+    
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (culturalMap) {
+                culturalMap.resize();
+            }
+        });
+    })();
+    </script>
   </body>
 </html>
+
 
 
 
