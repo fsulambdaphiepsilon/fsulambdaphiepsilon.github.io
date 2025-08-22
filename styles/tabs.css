@@ -461,12 +461,6 @@ p {
     box-sizing: border-box;
 }
 
-/* First slide caption is always visible */
-.first-slide .caption {
-  opacity: 1 !important;
-  pointer-events: auto !important;
-}
-
 
 
 
