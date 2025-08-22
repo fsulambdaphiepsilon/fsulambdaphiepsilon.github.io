@@ -720,72 +720,78 @@ img {
 
 @media screen and (max-width: 768px) {
   .custom-calendar {
-    max-width: 100%;
+    max-width: calc(100vw - 20px); /* Full viewport width minus margins */
     margin: 20px 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
   }
   
-  .calendar-header {
-    padding: 15px;
-  }
-  
-  .calendar-header h2 {
-    font-size: 20px;
-  }
-  
-  .calendar-header button {
-    padding: 4px 8px;
-    font-size: 14px;
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    min-width: 100%; /* Ensure grid takes full width */
   }
   
   .calendar-grid div {
-    padding: 8px 4px;
+    padding: 8px 2px; /* Reduce horizontal padding */
     min-height: 60px;
-    font-size: 14px;
+    font-size: 12px;
+    box-sizing: border-box; /* Include padding in width calculation */
   }
   
   .calendar-grid .day-name {
-    padding: 8px 4px;
-    font-size: 12px;
+    padding: 8px 2px;
+    font-size: 10px;
     font-weight: bold;
-  }
-  
-  .event {
-    font-size: 10px;
-    padding: 1px 2px;
-    margin-top: 2px;
-    word-break: break-word;
-  }
-}
-
-/* Extra small screens */
-@media screen and (max-width: 480px) {
-  .custom-calendar {
-    margin: 10px 5px;
-  }
-  
-  .calendar-grid div {
-    padding: 6px 2px;
-    min-height: 50px;
-    font-size: 12px;
-  }
-  
-  .calendar-grid .day-name {
-    font-size: 10px;
-    padding: 6px 2px;
+    min-height: auto;
   }
   
   .event {
     font-size: 9px;
+    padding: 1px 2px;
+    margin-top: 2px;
+    word-break: break-word;
+    line-height: 1.2;
+  }
+}
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+  .custom-calendar {
+    max-width: calc(100vw - 10px);
+    margin: 10px 5px;
+  }
+  
+  .calendar-grid div {
+    padding: 6px 1px;
+    min-height: 50px;
+    font-size: 11px;
+  }
+  
+  .calendar-grid .day-name {
+    padding: 6px 1px;
+    font-size: 9px;
+  }
+  
+  .event {
+    font-size: 8px;
     padding: 1px;
     margin-top: 1px;
   }
   
+  .calendar-header {
+    padding: 12px;
+  }
+  
   .calendar-header h2 {
-    font-size: 18px;
+    font-size: 16px;
+  }
+  
+  .calendar-header button {
+    padding: 3px 6px;
+    font-size: 12px;
   }
 }
-
 
 
 
