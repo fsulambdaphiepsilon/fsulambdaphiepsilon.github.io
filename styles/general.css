@@ -8,7 +8,7 @@
   min-height: 100vh;
   width: 100%;
   background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
-    url(images/fire.gif);
+    url(wallpaper/fire.gif);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -18,7 +18,7 @@
   min-height: 100vh;
   width: 100%;
   background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
-    url(images/aura-graphic.png);
+    url(wallpaper/aura-graphic.png);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -28,7 +28,7 @@
   min-height: 100vh;
   width: 100%;
   background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
-    url(images/installs.jpg);
+    url(wallpaper/installs.jpg);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -38,7 +38,7 @@
   min-height: 100vh;
   width: 100%;
   background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
-    url(images/roster-sp25.JPG);
+    url(wallpaper/roster-sp25.JPG);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -48,7 +48,7 @@
   min-height: 100vh;
   width: 100%;
   background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)),
-    url(images/rush.jpg);
+    url(wallpaper/rush.jpg);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -573,6 +573,7 @@ img {
   width: 100%;        /* scales down for smaller screens */
   height: auto;
 }
+
 
 
 
