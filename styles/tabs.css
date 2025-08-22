@@ -255,6 +255,30 @@ p {
   align-items: center;   /* vertically center left and right columns */
 }
 
+#tab5 .left-col {
+  align-items: flex-start;   /* keep text left-aligned */
+  justify-content: center;   /* vertically center content */
+  text-align: left;
+  margin-left: 60px;
+  max-width: 60%;
+  height: 100%;
+}
+
+
+#tab5 .left-col h2 {
+  font-size: 2.5em;
+  margin-bottom: 25px;       /* extra space below heading */
+}
+
+#tab5 .left-col p {
+  line-height: 1.6;
+  margin-top: 15px;
+  max-width: 90%;            /* give paragraph wider area */
+}
+
+#tab5.tab-content.active {
+  align-items: center;   /* vertically center left and right columns */
+}
 
 /* Culture Map Styles - Centered */
 .map-title {
@@ -434,6 +458,7 @@ p {
     overflow-x: hidden;
     box-sizing: border-box;
 }
+
 
 
 
