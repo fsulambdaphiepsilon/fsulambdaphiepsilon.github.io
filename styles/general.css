@@ -375,6 +375,8 @@ svg {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
 }
 
 .gallery2 {
@@ -404,15 +406,15 @@ svg {
 }
 
 .slider1 {
-  width: 800px;
-  height: 500px;
+  width: 95vw; /* Almost full viewport width */
+  height: 85vh; /* Most of viewport height */
   border-radius: 5px;
   box-sizing: border-box;
   overflow: hidden;
-  transform: translateY(0.5%);
-
+  transform: translateY(0%);
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .slider2 {
@@ -463,6 +465,37 @@ img {
   width: 100%;
 }
 
+.slide1 img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+/* Add caption styles */
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  height: 30%;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.caption h2, .caption h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.caption p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+
 .prev,
 .next {
   cursor: pointer;
@@ -481,6 +514,11 @@ img {
 
 .next {
   right: 0;
+}
+
+.prev:hover,
+.next:hover {
+  background: rgba(0, 0, 0, 0.6);
 }
 /* 
 .prev1,
@@ -586,6 +624,7 @@ img {
   width: 100%;        /* scales down for smaller screens */
   height: auto;
 }
+
 
 
 
