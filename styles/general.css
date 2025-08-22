@@ -718,6 +718,73 @@ img {
      display: block;
 }
 
+@media screen and (max-width: 768px) {
+  .custom-calendar {
+    max-width: 100%;
+    margin: 20px 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  
+  .calendar-header {
+    padding: 15px;
+  }
+  
+  .calendar-header h2 {
+    font-size: 20px;
+  }
+  
+  .calendar-header button {
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+  
+  .calendar-grid div {
+    padding: 8px 4px;
+    min-height: 60px;
+    font-size: 14px;
+  }
+  
+  .calendar-grid .day-name {
+    padding: 8px 4px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .event {
+    font-size: 10px;
+    padding: 1px 2px;
+    margin-top: 2px;
+    word-break: break-word;
+  }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 480px) {
+  .custom-calendar {
+    margin: 10px 5px;
+  }
+  
+  .calendar-grid div {
+    padding: 6px 2px;
+    min-height: 50px;
+    font-size: 12px;
+  }
+  
+  .calendar-grid .day-name {
+    font-size: 10px;
+    padding: 6px 2px;
+  }
+  
+  .event {
+    font-size: 9px;
+    padding: 1px;
+    margin-top: 1px;
+  }
+  
+  .calendar-header h2 {
+    font-size: 18px;
+  }
+}
 
 
 
