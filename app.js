@@ -90,25 +90,6 @@ function initializeSlider1() {
     }
 }
 
-showSlide(currentSlide);
-showSlide1(currentSlide1);
-showSlide2(currentSlide2);
-showSlide3(currentSlide3);
-
-const faqs = document.querySelectorAll(".faq");
-
-faqs.forEach((faq) => {
-    faq.addEventListener("click", () => {
-        faq.classList.toggle("active");
-    });
-});
-
-document.querySelectorAll('.flip-container').forEach(container => {
-    container.addEventListener('click', function () {
-        this.style.transform = this.style.transform === 'rotateY(180deg)' ? 'rotateY(0)' : 'rotateY(180deg)';
-    });
-});
-
 function setupCaptionHovers() {
     const slides = document.querySelectorAll('.slide1');
     
@@ -176,9 +157,29 @@ function showTab(tabId) {
     }
 }
 
+showSlide(currentSlide);
+showSlide1(currentSlide1);
+showSlide2(currentSlide2);
+showSlide3(currentSlide3);
+
+const faqs = document.querySelectorAll(".faq");
+
+faqs.forEach((faq) => {
+    faq.addEventListener("click", () => {
+        faq.classList.toggle("active");
+    });
+});
+
+document.querySelectorAll('.flip-container').forEach(container => {
+    container.addEventListener('click', function () {
+        this.style.transform = this.style.transform === 'rotateY(180deg)' ? 'rotateY(0)' : 'rotateY(180deg)';
+    });
+});
+
 // Show the default tab on page load
 
 showTab('tab1');
+
 
 
 
