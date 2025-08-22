@@ -453,8 +453,10 @@ svg {
   height: 100%;
   display: flex;
   flex-direction: column;
-  min-width: 100%; /* Ensure each slide takes full width */
+  min-width: 100%;
+  cursor: pointer; /* Show it's interactive */
 }
+
 .slide2 {
   flex: 0 0 100%;
   transition: transform 1s ease;
@@ -471,12 +473,11 @@ img {
 
 .slide1 img {
   width: 100%;
-  height: 70%;
+  height: 100%; /* Take full height now */
   object-fit: cover;
   display: block;
 }
 
-/* Add caption styles */
 .caption {
   position: absolute;
   bottom: 0;
@@ -485,19 +486,32 @@ img {
   background: rgba(0, 0, 0, 0.8);
   color: white;
   padding: 20px;
-  height: 30%;
-  overflow-y: auto;
   box-sizing: border-box;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none; /* Don't interfere with hover */
+  
+  /* Dynamic height based on content */
+  min-height: fit-content;
+  max-height: 40%; /* Don't take more than 40% of image */
+  overflow-y: auto;
+}
+
+.caption.show {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .caption h2, .caption h3 {
   margin-top: 0;
   margin-bottom: 10px;
+  font-size: 1.5rem;
 }
 
 .caption p {
   margin: 0;
   line-height: 1.5;
+  font-size: 1rem;
 }
 
 
@@ -629,6 +643,7 @@ img {
   width: 100%;        /* scales down for smaller screens */
   height: auto;
 }
+
 
 
 
