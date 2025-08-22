@@ -11,6 +11,7 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 30px 0px 10px 0px;
+  text-align: center
 }
 
 .core-values-text h3 {
@@ -31,6 +32,7 @@
   font-size: 16px;
   margin: 0px 0px 15px 0px;
   text-align: justify;
+  text-align: center
 }
 
 .fast-facts-icons {
@@ -179,3 +181,4 @@
   font-size: 14px;
   margin: 10px 0px 0px 0px;
 }
+
