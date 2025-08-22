@@ -467,7 +467,7 @@
     </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-    <script src="/datamaps.world.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/datamaps/0.5.9/datamaps.world.min.js"></script>
 
     <script>
       // Brothers by country
@@ -522,16 +522,17 @@
       });
 
       const map = new Datamap({
-        element: document.getElementById("map"),
-        projection: "mercator",
-        fills: { defaultFill: "#d3d3d3", highlight: "royalblue" },
-        data: dataset,
-        geographyConfig: {
+      element: document.getElementById("map"),
+      projection: "mercator",
+      responsive: true,  // Add this line
+      fills: { defaultFill: "#d3d3d3", highlight: "royalblue" },
+      data: dataset,
+      geographyConfig: {
           highlightFillColor: "#043E79",
           highlightBorderColor: "white",
           popupOnHover: false
-        }
-      });
+      }
+  });
 
       // Tooltip
       const tooltip = d3.select("body").append("div")
@@ -592,6 +593,7 @@
     <script src="app.js"></script>
   </body>
 </html>
+
 
 
 
