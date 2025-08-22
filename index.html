@@ -236,6 +236,7 @@
 
     <script src="app.js"></script>
 
+    <!-- Edit the Events Here -->
     <script>
       const events = {
         "2025-08-22": [{ title: "Birthday" }],
@@ -243,7 +244,8 @@
         "2025-08-27": [{ title: "Fundraiser" }],
         "2025-09-02": [{ title: "Welcome Meeting" }]
       };
-
+      <details>
+        <summary>Code for the calendar</summary>
       const calendarGrid = document.getElementById("calendarGrid");
       const monthYear = document.getElementById("monthYear");
 
@@ -312,9 +314,11 @@
       });
 
       renderCalendar(currentDate);
+      </details>
     </script>
   </body>
 </html>
+
 
 
 
