@@ -14,7 +14,6 @@ let currentSlide = 0;
 let currentSlide1 = 0;
 let currentSlide2 = 0;
 let currentSlide3 = 0;
-let captionTimeout;
 
 function showSlide(index) {
     slides.forEach((slide, i) => {
@@ -99,10 +98,6 @@ function setupCaptionHovers() {
         if (caption) {
             // Show caption on hover
             slide.addEventListener('mouseenter', () => {
-                // Clear any existing timeout
-                if (captionTimeout) {
-                    clearTimeout(captionTimeout);
-                }
                 
                 // Show caption
                 caption.classList.add('show');
@@ -110,23 +105,16 @@ function setupCaptionHovers() {
             
             // Hide caption after delay when mouse leaves
             slide.addEventListener('mouseleave', () => {
-                // Set timeout to hide after 2 seconds
-                captionTimeout = setTimeout(() => {
-                    caption.classList.remove('show');
-                }, 2000);
+                caption.classList.remove('show');
             });
             
             // If user hovers over caption itself, keep it visible
             caption.addEventListener('mouseenter', () => {
-                if (captionTimeout) {
-                    clearTimeout(captionTimeout);
-                }
+                caption.classList.add('show');
             });
             
             caption.addEventListener('mouseleave', () => {
-                captionTimeout = setTimeout(() => {
-                    caption.classList.remove('show');
-                }, 2000);
+                caption.classList.remove('show');
             });
         }
     });
@@ -179,6 +167,7 @@ document.querySelectorAll('.flip-container').forEach(container => {
 // Show the default tab on page load
 
 showTab('tab1');
+
 
 
 
