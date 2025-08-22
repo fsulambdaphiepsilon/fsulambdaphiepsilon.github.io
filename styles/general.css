@@ -515,6 +515,11 @@ img {
   font-size: 1.2rem; /* Increased from 1rem */
 }
 
+/* First slide caption is always visible */
+.first-slide .caption {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
 
 .prev,
 .next {
@@ -644,6 +649,7 @@ img {
   width: 100%;        /* scales down for smaller screens */
   height: auto;
 }
+
 
 
 
