@@ -345,6 +345,52 @@ svg {
   transition: transform 0.5s ease-in;
 }
 
+.faq1 {
+  max-width: 700px;
+  margin: auto;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgb(4, 62, 121);
+  cursor: pointer;
+}
+
+.faq1 h1 {
+  text-align: center;
+  margin-top: 50px;
+  padding-bottom: 30px;
+  font-size: 35px;
+}
+
+.question1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question1 h3 {
+  font-size: 1.3rem;
+}
+
+.answer1 {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1.4s ease;
+}
+
+.answer1 p {
+  padding-top: 1rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.faq1.active .answer {
+  max-height: 300px;
+  animation: fade 1s ease-in-out;
+}
+
+.faq1.active svg {
+  transform: rotate(180deg);
+}
+
 @keyframes fade {
   from {
     opacity: 0;
@@ -792,6 +838,7 @@ img {
     font-size: 12px;
   }
 }
+
 
 
 
