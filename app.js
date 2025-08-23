@@ -172,6 +172,14 @@ faqs.forEach((faq) => {
     });
 });
 
+const faqs1 = document.querySelectorAll(".faq1");
+
+faqs1.forEach((faq1) => {
+    faq1.addEventListener("click", () => {
+        faq1.classList.toggle("active");
+    });
+});
+
 document.querySelectorAll('.flip-container').forEach(container => {
     container.addEventListener('click', function () {
         this.style.transform = this.style.transform === 'rotateY(180deg)' ? 'rotateY(0)' : 'rotateY(180deg)';
@@ -180,3 +188,4 @@ document.querySelectorAll('.flip-container').forEach(container => {
 
 // Show the default tab on page load
 showTab('tab1');
+
