@@ -391,7 +391,7 @@ svg {
   transform: rotate(180deg);
 }
 
-/*@keyframes fade {
+@keyframes fade {
   from {
     opacity: 0;
     transform: translateY(-10px);
@@ -400,7 +400,7 @@ svg {
     opacity: 1;
     transform: translateY(0px);
   }
-}*/
+}
 
 .stuff {
   display: inline-block;
@@ -838,6 +838,7 @@ img {
     font-size: 12px;
   }
 }
+
 
 
 
