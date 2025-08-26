@@ -382,24 +382,13 @@ svg {
   font-size: 1rem;
 }
 
-.faq1.active .answer {
+.faq1.active .answer1 {
   max-height: 300px;
   animation: fade 1s ease-in-out;
 }
 
 .faq1.active svg {
   transform: rotate(180deg);
-}
-
-@keyframes fade {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
 }
 
 .stuff {
@@ -960,6 +949,7 @@ img {
     font-size: 0.95rem;
   }
 }
+
 
 
 
