@@ -887,6 +887,8 @@ img {
   min-height: 60px;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .leadership-column .question1 {
@@ -952,7 +954,6 @@ img {
     font-size: 0.95rem;
   }
 }
-
 
 
 
