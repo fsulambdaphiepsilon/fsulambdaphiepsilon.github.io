@@ -107,6 +107,11 @@ html {
   padding: 5px auto;
 }
 
+/* Add increased margin for the last entry in brother descriptions */
+.brother-description:last-of-type {
+  margin-bottom: 15px;
+}
+
 .brother-card:hover .brother-description {
   opacity: 1;
 }
@@ -169,11 +174,3 @@ html {
     white-space: nowrap;
   }
 }
-
-/* Add increased margin for the last entry in brother descriptions */
-.brother-description:last-of-type {
-  margin-bottom: 15px;
-}
-
-
-
