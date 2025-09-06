@@ -349,6 +349,7 @@ svg {
   max-width: 700px;
   margin: auto;
   padding-bottom: 0px;
+  background: #043E79;
   border-bottom: 2px solid rgb(4, 62, 121);
   cursor: pointer;
 }
@@ -955,6 +956,7 @@ img {
     font-size: 0.95rem;
   }
 }
+
 
 
 
