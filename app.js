@@ -158,13 +158,13 @@ function showCaptionTemporarily() {
     // Show the caption
     caption.classList.add('show');
     
-    // Set timeout to hide caption after 1 second
+    // Set timeout to hide caption after 2 seconds
     captionTimeout = setTimeout(() => {
         // Only hide if user is not hovering over the slide
         if (!currentSlideElement.matches(':hover')) {
             caption.classList.remove('show');
         }
-    }, 1000);
+    }, 2000);
 }
 
 // Initialize slides
@@ -197,6 +197,7 @@ document.querySelectorAll('.flip-container').forEach(container => {
 
 // Show the default tab on page load
 showTab('tab1');
+
 
 
 
