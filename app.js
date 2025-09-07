@@ -104,30 +104,14 @@ function setupCaptionHovers() {
                 if (captionTimeout) {
                     clearTimeout(captionTimeout);
                 }
-                
-                // Show caption
                 caption.classList.add('show');
             });
             
-            // Hide caption after delay when mouse leaves
+            // Hide caption when mouse leaves (except for first slide)
             slide.addEventListener('mouseleave', () => {
-                // Set timeout to hide after 2 seconds
-                captionTimeout = setTimeout(() => {
+                if (!slide.classList.contains('first-slide')) {
                     caption.classList.remove('show');
-                }, 500);
-            });
-            
-            // If user hovers over caption itself, keep it visible
-            caption.addEventListener('mouseenter', () => {
-                if (captionTimeout) {
-                    clearTimeout(captionTimeout);
                 }
-            });
-            
-            caption.addEventListener('mouseleave', () => {
-                captionTimeout = setTimeout(() => {
-                    caption.classList.remove('show');
-                }, 500);
             });
         }
     });
@@ -156,6 +140,29 @@ function showTab(tabId) {
             setupCaptionHovers();
         }, 200); // Increased delay slightly
     }
+}
+
+function showCaptionTemporarily() {
+    const currentSlideElement = slides1[currentSlide1];
+    const caption = currentSlideElement.querySelector('.caption');
+    
+    if (!caption) return;
+    
+    // Clear any existing timeout
+    if (captionTimeout) {
+        clearTimeout(captionTimeout);
+    }
+    
+    // Show the caption
+    caption.classList.add('show');
+    
+    // Set timeout to hide caption after 1 second
+    captionTimeout = setTimeout(() => {
+        // Only hide if user is not hovering over the slide
+        if (!currentSlideElement.matches(':hover')) {
+            caption.classList.remove('show');
+        }
+    }, 1000);
 }
 
 // Initialize slides
@@ -188,4 +195,5 @@ document.querySelectorAll('.flip-container').forEach(container => {
 
 // Show the default tab on page load
 showTab('tab1');
+
 
