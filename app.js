@@ -43,11 +43,13 @@ function showSlide1(index) {
 function nextSlide1() {
     currentSlide1 = (currentSlide1 + 1) % slides1.length;
     showSlide1(currentSlide1);
+    showCaptionTemporarily();
 }
 
 function prevSlide1() {
     currentSlide1 = (currentSlide1 - 1 + slides1.length) % slides1.length;
     showSlide1(currentSlide1);
+    showCaptionTemporarily();
 }
 
 function showSlide2(index) {
@@ -195,5 +197,6 @@ document.querySelectorAll('.flip-container').forEach(container => {
 
 // Show the default tab on page load
 showTab('tab1');
+
 
 
