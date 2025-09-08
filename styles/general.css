@@ -840,7 +840,7 @@ img {
   }
 }
 
-/* Leadership Tab Styles */
+
 /* Leadership Tab Styles */
 .leadership-header {
   display: flex;
@@ -859,7 +859,6 @@ img {
 .leadership-text h2 {
   margin: 0 0 8px 0;
   font-size: 2rem;
-  color: #043E79;
 }
 
 .leadership-text p {
@@ -956,6 +955,7 @@ img {
     font-size: 0.95rem;
   }
 }
+
 
 
 
