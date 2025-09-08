@@ -229,7 +229,7 @@ p {
 
 #tab3 .gallery3 {
   width: 90%;
-  max-width: 450px;
+  max-width: 600px;
 }
 
 #tab3 .right-col {
@@ -498,6 +498,7 @@ p {
     overflow-x: hidden;
     box-sizing: border-box;
 }
+
 
 
 
