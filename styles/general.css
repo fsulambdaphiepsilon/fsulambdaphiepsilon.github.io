@@ -288,7 +288,7 @@ nav {
 .location {
   width: 80%;
   margin: auto;
-  padding: 80px 0;
+  padding: 40px 0;
 }
 
 .location iframe {
@@ -956,6 +956,9 @@ img {
   }
 }
 
+.gallery {
+  padding-bottom: 100px;
+}
 
 
 
