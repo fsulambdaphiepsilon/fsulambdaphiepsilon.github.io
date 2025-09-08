@@ -238,14 +238,14 @@ p {
 }
 
 #tab3 .gallery3 {
-  width: 90%;
-  max-width: 1000px;
+  width: 100%;
+  max-width: 500px;
 }
 
 #tab3 .right-col {
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  text-align: right;
+  text-align: center;
   margin-right: 60px;
   max-width: 35%;
   height: 100%;
@@ -508,6 +508,7 @@ p {
     overflow-x: hidden;
     box-sizing: border-box;
 }
+
 
 
 
