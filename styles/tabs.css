@@ -218,15 +218,24 @@ p {
   }
 }
 
+#tab3 .left-col {
+  align-items: center;       /* center the gallery */
+  justify-content: center;   /* vertically center content */
+  text-align: center;
+  margin-left: 60px;
+  max-width: 50%;
+  height: 100%;
+}
+
 #tab3 .right-col {
   align-items: flex-start;   /* keep text left-aligned */
   justify-content: center;   /* vertically center content */
   text-align: left;
-  margin-left: 60px;
-  max-width: 60%;
+  margin-left: 20px;         /* reduced margin since gallery is on left */
+  max-width: 50%;
   height: 100%;
+  flex: 1;
 }
-
 
 #tab3 .right-col h2 {
   font-size: 2.5em;
@@ -483,6 +492,7 @@ p {
     overflow-x: hidden;
     box-sizing: border-box;
 }
+
 
 
 
