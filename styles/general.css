@@ -866,7 +866,7 @@ img {
 
   .leadership-text p {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.9);
     max-width: 600px;
@@ -995,5 +995,6 @@ img {
 .gallery {
   padding-bottom: 100px;
 }
+
 
 
