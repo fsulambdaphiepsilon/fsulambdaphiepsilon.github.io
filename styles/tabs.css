@@ -224,18 +224,16 @@ p {
   align-items: center;       /* center the gallery */
   justify-content: center;   /* vertically center content */
   text-align: center;
-  max-width: 50%;
+  max-width: 40%;
   height: 100%;
   flex: 1;
 }
 
 #tab3 .right-col {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;   /* keep text left-aligned */
+  align-items: flex-start;  
   justify-content: center;   /* vertically center content */
-  text-align: left;
-  margin-left: 60px;
+  text-align: right;
+  margin-right: 60px;
   max-width: 60%;
   height: 100%;
 }
@@ -495,6 +493,7 @@ p {
     overflow-x: hidden;
     box-sizing: border-box;
 }
+
 
 
 
