@@ -129,8 +129,11 @@ p {
 
 .tab {
   cursor: pointer;
-  padding: 15px;
+  padding: 25px 35px;
   background-color: #f8f8f8;
+  font-size: 1.3em;
+  font-weight: 600;
+  min-width: 120px;
 }
 
 .tab:hover {
@@ -508,6 +511,7 @@ p {
     overflow-x: hidden;
     box-sizing: border-box;
 }
+
 
 
 
