@@ -218,41 +218,6 @@ p {
   }
 }
 
-#tab3 .left-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;       /* center the gallery */
-  justify-content: center;   /* vertically center content */
-  text-align: center;
-  max-width: 40%;
-  height: 100%;
-  flex: 1;
-}
-
-#tab3 .right-col {
-  align-items: flex-start;  
-  justify-content: center;   /* vertically center content */
-  text-align: right;
-  margin-right: 60px;
-  max-width: 60%;
-  height: 100%;
-}
-
-#tab3 .right-col h2 {
-  font-size: 2.5em;
-  font-weight: bold;
-  margin-bottom: 25px;       /* extra space below heading */
-}
-
-#tab3 .right-col p {
-  line-height: 1.6;
-  margin-top: 15px;
-  max-width: 90%;            /* give paragraph wider area */
-}
-
-#tab3.tab-content.active {
-  align-items: center;   /* vertically center left and right columns */
-}
 
 #tab4 .left-col {
   align-items: flex-start;   /* keep text left-aligned */
@@ -493,6 +458,7 @@ p {
     overflow-x: hidden;
     box-sizing: border-box;
 }
+
 
 
 
