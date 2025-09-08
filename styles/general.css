@@ -847,9 +847,8 @@ img {
     align-items: center;
     margin-bottom: 20px;
     padding: 20px;
-    background: linear-gradient(135deg, #043E79 0%, #2980b9 100%);
     border-radius: 10px;
-    color: white;
+    color: black;
     }
   
   .leadership-dragon {
@@ -862,7 +861,7 @@ img {
   .leadership-text h2 {
     margin: 0 0 8px 0;
     font-size: 1.8rem;
-    color: white;
+    color: black;
     }
 
   .leadership-text p {
@@ -996,4 +995,5 @@ img {
 .gallery {
   padding-bottom: 100px;
 }
+
 
