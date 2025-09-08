@@ -218,6 +218,16 @@ p {
   }
 }
 
+/* Brotherhood Tab Styles */
+#tab1 .gallery1 {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#tab1 .slider1 {
+  width: 100%;
+}
+
 /* Service Tab Styles */
 #tab3 .left-col {
   display: flex;
@@ -498,6 +508,7 @@ p {
     overflow-x: hidden;
     box-sizing: border-box;
 }
+
 
 
 
