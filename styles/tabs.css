@@ -218,6 +218,46 @@ p {
   }
 }
 
+/* Service Tab Styles */
+#tab3 .left-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 50%;
+}
+
+#tab3 .gallery3 {
+  width: 80%;
+  max-width: 350px;
+}
+
+#tab3 .right-col {
+  align-items: flex-end;
+  justify-content: center;
+  text-align: right;
+  margin-right: 60px;
+  max-width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#tab3 .right-col h2 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+#tab3 .right-col p {
+  line-height: 1.6;
+  margin-top: 15px;
+  max-width: 90%;
+}
+
+#tab3.tab-content.active {
+  align-items: center;
+}
 
 #tab4 .left-col {
   align-items: flex-start;   /* keep text left-aligned */
@@ -458,6 +498,7 @@ p {
     overflow-x: hidden;
     box-sizing: border-box;
 }
+
 
 
 
