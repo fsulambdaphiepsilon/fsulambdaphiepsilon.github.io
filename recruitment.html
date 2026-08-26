@@ -3,15 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Florida State University Lambda Phi Epsilon</title>
+    <title>Rush | FSU Lambda Phi Epsilon</title>
+    <meta
+      name="description"
+      content="Built on Blue — Fall &#39;26 rush for the Beta Theta chapter of Lambda Phi Epsilon at FSU. Five events, all free, all non-binding. Dates, times, locations, and answers to the usual questions."
+    />
     <link rel="stylesheet" href="styles/general.css" />
     <link rel="stylesheet" href="styles/navbar.css" />
     <link rel="stylesheet" href="styles/footer.css" />
-    <link rel="icon" type="image/x-icon" href="/images/insta.png" />
+    <link rel="stylesheet" href="styles/recruitment.css" />
+    <link rel="icon" type="image/png" href="/images/fsulphie-logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -21,10 +26,15 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
-    <section class="header5">
+  <body class="rush">
+    <header class="rush-hero">
       <nav>
-        <a href="index.html"><img src="images/fsulphie-logo.png" class="logo" /></a>
+        <a href="index.html"
+          ><img
+            src="images/fsulphie-logo.png"
+            class="logo"
+            alt="FSU Lambda Phi Epsilon logo"
+        /></a>
         <div class="nav-links" id="navLinks">
           <i class="fa fa-times" onclick="hideMenu()"></i>
           <ul>
@@ -37,207 +47,292 @@
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
       </nav>
-      <div class="text-box">
-        <h1>Recruitment</h1>
-        <p>Interested in becoming a Lambda?</p>
-        <a
-          href="https://docs.google.com/forms/d/1sHefSeyRPRz8yVMG-Dk0sgk3qH7eZ9VJ8N6wc1CJPSo/viewform?edit_requested=true"
-          class="btn"
-          target="_blank"
-          >Fill Out Our Rush Form</a
-        >
-      </div>
-    </section>
 
-    <section class="faq">
-      <h1
-        style="text-decoration: underline rgb(4, 62, 121); letter-spacing: 2px"
-      >
-        RUSH FAQs
-      </h1>
-      <div class="question">
-        <h3>WHAT IS RUSH?</h3>
-        <svg width="15" height="10" viewBox="0 0 42 25">
-          <path
-            d="M3 3L21 21L39 3"
-            stroke="white"
-            stroke-width="7"
-            stroke-linecap="round"
-          />
-        </svg>
-      </div>
-      <div class="answer">
-        <p>
-          Rush, also known as recruitment, is a period at the beginning of the
-          school semester when anyone interested in Greek life can attend events
-          set up by a local chapter to meet its members and learn more about
-          their organization. Rush usually lasts about 1-2 weeks, with events
-          held almost every day that showcases various aspects of the
-          fraternity.
+      <div class="rush-hero__inner">
+        <p class="eyebrow">Beta Theta &middot; Florida State &middot; Fall &rsquo;26 Rush</p>
+        <h1>Built on <em>Blue</em></h1>
+        <p class="rush-hero__lede">
+          Five nights to meet the brothers and decide for yourself. Every event
+          is free, rides are covered, and nothing you do during rush commits you
+          to anything.
         </p>
+        <div class="rush-hero__actions">
+          <a
+            class="rush-btn"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdgW1fero7YuLf1rEfnfTTcsJmF-JduP8pcMrQKXDypsi3_nQ/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Fill out the rush form</a
+          >
+          <a class="rush-btn rush-btn--ghost" href="#the-hand">See the five events</a>
+        </div>
       </div>
-    </section>
+    </header>
 
-    <section class="faq">
-      <div class="question">
-        <h3>DO I HAVE TO PAY?</h3>
-        <svg width="15" height="10" viewBox="0 0 42 25">
-          <path
-            d="M3 3L21 21L39 3"
-            stroke="white"
-            stroke-width="7"
-            stroke-linecap="round"
-          />
-        </svg>
-      </div>
-      <div class="answer">
-        <p>
-          No. All rush events are free. All costs are funded by the chapter and
-          rides are provided to all events as well.
+    <main>
+      <section class="rush-hand" id="the-hand" aria-labelledby="hand-title">
+        <div class="rush-hand__head">
+          <p class="eyebrow">The lineup</p>
+          <h2 class="section-title" id="hand-title">Five cards on the table</h2>
+          <hr class="rule" />
+          <p class="section-note">
+            All events are free to attend, with no obligation to join, and rides will be provided if needed. To be eligible for an interview, you must attend TWO social events and ONE informational event.
+          </p>
+        </div>
+
+        <ul class="hand">
+          <li class="card">
+            <p class="card__index">8<span>/28</span></p>
+            <div class="card__body">
+              <h3 class="card__name">Informational</h3>
+              <p class="card__time">6:00 – 8:00 PM</p>
+              <p class="card__place">Strozier 107K</p>
+            </div>
+          </li>
+          <li class="card">
+            <p class="card__index">9<span>/1</span></p>
+            <div class="card__body">
+              <h3 class="card__name">Korean Barbeque</h3>
+              <p class="card__time">8:00 – 10:00 PM</p>
+              <p class="card__place">DM for address</p>
+            </div>
+          </li>
+          <li class="card">
+            <p class="card__index">9<span>/2</span></p>
+            <div class="card__body">
+              <h3 class="card__name">Informational</h3>
+              <p class="card__time">6:00 – 8:00 PM</p>
+              <p class="card__place">Strozier 107K</p>
+            </div>
+          </li>
+          <li class="card">
+            <p class="card__index">9<span>/4</span></p>
+            <div class="card__body">
+              <h3 class="card__name">Game Night</h3>
+              <p class="card__time">7:30 – 9:30 PM</p>
+              <p class="card__place">DM for address</p>
+            </div>
+          </li>
+          <li class="card card--facedown">
+            <p class="card__letters">ΛΦΕ</p>
+            <h3 class="card__name">Invitational</h3>
+            <p class="card__place">9/9 &middot; Invite only</p>
+          </li>
+        </ul>
+
+        <p class="rush-hand__footnote">
+          Off-campus addresses go out over DM. Message us on
+          <a
+            href="https://www.instagram.com/fsulphie/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Instagram</a
+          >
+          and we will send you the spot and sort out a ride.
         </p>
-      </div>
-    </section>
+      </section>
 
-    <section class="faq">
-      <div class="question">
-        <h3>SHOULD I ATTEND ALL THE RUSH EVENTS?</h3>
-        <svg width="15" height="10" viewBox="0 0 42 25">
-          <path
-            d="M3 3L21 21L39 3"
-            stroke="white"
-            stroke-width="7"
-            stroke-linecap="round"
-          />
-        </svg>
-      </div>
-      <div class="answer">
-        <p>
-          If you are serious about joining Lambda Phi Epsilon, you are highly
-          encouraged to attend all rush events from beginning to end. Rush is
-          designed to give interested individuals a glimpse into real fraternity
-          life, so the more you experience and see for yourself, the better idea
-          you will have of whether the fraternity is something you want to be a
-          part of.
-        </p>
-      </div>
-    </section>
+      <section class="rush-posters" aria-labelledby="posters-title">
+          <div class="rush-posters__pair">
+            <figure>
+              <img
+                src="images/fall26rush1.jpg"
+                alt="Built on Blue, Fall &#39;26 Rush poster: a blue ink dragon above a fan of playing cards marked lambda, phi, and epsilon"
+              />
+              <figcaption>Built on Blue</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="images/fall26rush2.jpg"
+                alt="Fall &#39;26 Rush schedule poster listing all five events with dates, times, and locations"
+              />
+              <figcaption>The schedule</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
 
-    <section class="faq">
-      <div class="question">
-        <h3>
-          AM I REQUIRED TO FOLLOW THROUGH WITH THE PROCESS IF I ATTEND RUSH?
-        </h3>
-        <svg width="15" height="10" viewBox="0 0 42 25">
-          <path
-            d="M3 3L21 21L39 3"
-            stroke="white"
-            stroke-width="7"
-            stroke-linecap="round"
-          />
-        </svg>
-      </div>
-      <div class="answer">
-        <p>
-          No, there is no obligation for you to take action after rush has
-          concluded. Rush is simply an opportunity for you to introduce yourself
-          and become more familiar with the fraternity and the brothers. Rush is
-          completely non-binding.
-        </p>
-      </div>
-    </section>
+      <section class="rush-rules" aria-labelledby="rules-title">
+        <div class="rush-rules__inner">
+          <div class="rush-rules__head">
+            <p class="eyebrow">Before you show up</p>
+            <h2 class="section-title" id="rules-title">Recruitment FAQs</h2>
+            <hr class="rule" />
+          </div>
 
-    <section class="faq">
-      <div class="question">
-        <h3>WHAT HAPPENS AFTER RUSH?</h3>
-        <svg width="15" height="10" viewBox="0 0 42 25">
-          <path
-            d="M3 3L21 21L39 3"
-            stroke="white"
-            stroke-width="7"
-            stroke-linecap="round"
-          />
-        </svg>
-      </div>
-      <div class="answer">
-        <p>
-          Upon attending rush, if you feel that Lambda Phi Epsilon may be a good
-          fit for you, you can inquire further about the “bidding” process which
-          usually includes a formal interview, followed by an invitation to move
-          forward with the process of joining the fraternity.
-        </p>
-      </div>
-    </section>
+        <div class="faq">
+          <div class="question">
+            <h3>What is rush?</h3>
+            <svg width="15" height="10" viewBox="0 0 42 25" aria-hidden="true" focusable="false">
+              <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="answer">
+            <p>Rush, also known as recruitment, is a period at the beginning of the school semester when anyone interested in Greek life can attend events set up by a local chapter to meet its members and learn more about their organization. Rush usually lasts about 1-2 weeks, with events held almost every day that showcases various aspects of the fraternity.</p>
+          </div>
+        </div>
+        <div class="faq">
+          <div class="question">
+            <h3>Do I have to pay?</h3>
+            <svg width="15" height="10" viewBox="0 0 42 25" aria-hidden="true" focusable="false">
+              <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="answer">
+            <p>No. All rush events are free. All costs are funded by the chapter and rides are provided to all events as well.</p>
+          </div>
+        </div>
+        <div class="faq">
+          <div class="question">
+            <h3>Should I attend all the rush events?</h3>
+            <svg width="15" height="10" viewBox="0 0 42 25" aria-hidden="true" focusable="false">
+              <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="answer">
+            <p>If you are serious about joining Lambda Phi Epsilon, you are highly encouraged to attend all rush events from beginning to end. Rush is designed to give interested individuals a glimpse into real fraternity life, so the more you experience and see for yourself, the better idea you will have of whether the fraternity is something you want to be a part of.</p>
+          </div>
+        </div>
+        <div class="faq">
+          <div class="question">
+            <h3>Am I required to follow through with the process if I attend rush?</h3>
+            <svg width="15" height="10" viewBox="0 0 42 25" aria-hidden="true" focusable="false">
+              <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="answer">
+            <p>No, there is no obligation for you to take action after rush has concluded. Rush is simply an opportunity for you to introduce yourself and become more familiar with the fraternity and the brothers. Rush is completely non-binding.</p>
+          </div>
+        </div>
+        <div class="faq">
+          <div class="question">
+            <h3>What happens after rush?</h3>
+            <svg width="15" height="10" viewBox="0 0 42 25" aria-hidden="true" focusable="false">
+              <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="answer">
+            <p>Upon attending rush, if you feel that Lambda Phi Epsilon may be a good fit for you, you can inquire further about the “bidding” process which usually includes a formal interview, followed by an invitation to move forward with the process of joining the fraternity.</p>
+          </div>
+        </div>
+        <div class="faq">
+          <div class="question">
+            <h3>Will joining a fraternity impact my education?</h3>
+            <svg width="15" height="10" viewBox="0 0 42 25" aria-hidden="true" focusable="false">
+              <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="answer">
+            <p>While you are encouraged to learn more about the Greek system, we want you to remember why you are at school in the first place. Lambda Phi Epsilon's first and foremost purpose is to promote academic achievement and this priority is stressed even to prospective members. Like any worthwhile undertaking, joining a fraternity will most likely require some time and effort. Managing school and joining a fraternity is definitely possible, though, and part of becoming a Lambda is learning how to handle these challenges and become a responsible, well-rounded individual. The active members of the fraternity are students as well, and they will be committed to ensuring your academic success. Be sure to find the right balance to have a rewarding college life both academically and socially.</p>
+          </div>
+        </div>
+        <div class="faq">
+          <div class="question">
+            <h3>Do I have to be Asian to be a member?</h3>
+            <svg width="15" height="10" viewBox="0 0 42 25" aria-hidden="true" focusable="false">
+              <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="answer">
+            <p>No. Lambda Phi Epsilon is an Asian interest fraternity that focuses on the promotion of Asian American awareness, but members of every ethnicity, race, religion, and creed are accepted.</p>
+          </div>
+        </div>
+        </div>
+      </section>
 
-    <section class="faq">
-      <div class="question">
-        <h3>WILL JOINING A FRATERNITY IMPACT MY EDUCATION?</h3>
-        <svg width="15" height="10" viewBox="0 0 42 25">
-          <path
-            d="M3 3L21 21L39 3"
-            stroke="white"
-            stroke-width="7"
-            stroke-linecap="round"
-          />
-        </svg>
-      </div>
-      <div class="answer">
-        <p>
-          While you are encouraged to learn more about the Greek system, we want
-          you to remember why you are at school in the first place. Lambda Phi
-          Epsilon's first and foremost purpose is to promote academic
-          achievement and this priority is stressed even to prospective members.
-          Like any worthwhile undertaking, joining a fraternity will most likely
-          require some time and effort. Managing school and joining a fraternity
-          is definitely possible, though, and part of becoming a Lambda is
-          learning how to handle these challenges and become a responsible,
-          well-rounded individual. The active members of the fraternity are
-          students as well, and they will be committed to ensuring your academic
-          success. Be sure to find the right balance to have a rewarding college
-          life both academically and socially.
-        </p>
-      </div>
-    </section>
+      <section class="rush-chairs" id="rush-chairs" aria-labelledby="chairs-title">
+        <div class="rush-chairs__inner">
+          <div class="rush-chairs__head">
+            <p class="eyebrow">Who to ask</p>
+            <h2 class="section-title" id="chairs-title">Rush Chairs</h2>
+            <hr class="rule" />
+          </div>
 
-    <section class="faq">
-      <div class="question">
-        <h3>DO I HAVE TO BE ASIAN TO BE A MEMBER?</h3>
-        <svg width="15" height="10" viewBox="0 0 42 25">
-          <path
-            d="M3 3L21 21L39 3"
-            stroke="white"
-            stroke-width="7"
-            stroke-linecap="round"
-          />
-        </svg>
-      </div>
-      <div class="answer">
-        <p>
-          No. Lambda Phi Epsilon is an Asian interest fraternity that focuses on
-          the promotion of Asian American awareness, but members of every
-          ethnicity, race, religion, and creed are accepted.
-        </p>
-      </div>
-    </section>
+          <div class="chairs">
+        <article class="chair">
+          <div class="chair__portrait">
+            <img src="images/headshots/brandon.jpg" alt="Brandon “CØRT-SIDE” Manera, #92" />
+            <span class="chair__badge">92</span>
+          </div>
+          <div class="chair__body">
+            <h3 class="chair__name">Brandon &ldquo;C&Oslash;RT-SIDE&rdquo; Manera</h3>
+            <p class="chair__role">Rush chair</p>
+            <dl class="chair__facts">
+              <div><dt>Class</dt><dd>Rho</dd></div>
+              <div><dt>Crossed</dt><dd>Spring 2026</dd></div>
+              <div><dt>Family line</dt><dd>Hot Shots</dd></div>
+            </dl>
+            <ul class="chair__contacts">
+              <li>
+                <span class="chair__label">Phone</span>
+                <a href="tel:+17274120333">(727) 412-0333</a>
+              </li>
+              <li>
+                <span class="chair__label">Instagram</span>
+                <a href="https://www.instagram.com/ohbrandon74/" target="_blank"
+                   rel="noopener noreferrer">@ohbrandon74</a>
+              </li>
+            </ul>
+          </div>
+        </article>
 
-    <h1
-      style="
-        text-align: center;
-        padding-bottom: 40px;
-        padding-top: 40px;
-        background-image: linear-gradient(
-          to top,
-          rgb(4, 62, 121) 0%,
-          rgb(218, 202, 166) 100%
-        );
-        background-size: 100%;
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -moz-text-fill-color: transparent;
-      "
-    >
-      HOPE TO SEE YOU AT OUR NEXT RUSH EVENT!
-    </h1>
+        <article class="chair">
+          <div class="chair__portrait">
+            <img src="images/headshots/82-headshot.jpg" alt="Charlie “squidwuARD” Lu, #82" />
+            <span class="chair__badge">82</span>
+          </div>
+          <div class="chair__body">
+            <h3 class="chair__name">Charlie &ldquo;squidwuARD&rdquo; Lu</h3>
+            <p class="chair__role">Rush chair</p>
+            <dl class="chair__facts">
+              <div><dt>Class</dt><dd>Pi</dd></div>
+              <div><dt>Crossed</dt><dd>Spring 2025</dd></div>
+              <div><dt>Family line</dt><dd>Young Gunz</dd></div>
+            </dl>
+            <ul class="chair__contacts">
+              <li>
+                <span class="chair__label">Phone</span>
+                <a href="tel:+9049109698">(904) 910-9698</a>
+              </li>
+              <li>
+                <span class="chair__label">Instagram</span>
+                <a href="https://www.instagram.com/_charlielu/" target="_blank"
+                   rel="noopener noreferrer">@_charlielu</a>
+              </li>
+            </ul>
+          </div>
+        </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="rush-closing">
+        <div class="rush-closing__inner">
+          <h2>Nothing to lose by showing up.</h2>
+          <p>
+            Fill out the form and we will reach out with details before the
+            first event. Questions in the meantime go to either rush chair or
+            straight to our Instagram.
+          </p>
+          <div class="rush-hero__actions">
+            <a
+              class="rush-btn"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdgW1fero7YuLf1rEfnfTTcsJmF-JduP8pcMrQKXDypsi3_nQ/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Fill out the rush form</a
+            >
+            <a
+              class="rush-btn rush-btn--ghost"
+              href="https://www.instagram.com/fsulphie/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Message us on Instagram</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- Footer Section -->
     <div class="footer__container">
@@ -254,11 +349,11 @@
             <h2>Get Involved</h2>
             <a href="mailto:fsulphie.president@gmail.com">Gmail</a>
             <a
-              href="https://docs.google.com/forms/d/1sHefSeyRPRz8yVMG-Dk0sgk3qH7eZ9VJ8N6wc1CJPSo/viewform?edit_requested=true"
-              target="_blank"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdgW1fero7YuLf1rEfnfTTcsJmF-JduP8pcMrQKXDypsi3_nQ/viewform"
+              target="_blank" rel="noopener noreferrer"
               >Rush Form</a
             >
-            <a href="https://lambdaphiepsilon.com/" target="_blank"
+            <a href="https://lambdaphiepsilon.com/" target="_blank" rel="noopener noreferrer"
               >National Website</a
             >
             <a href="mailto:fsulphie.president@gmail.com">Sponsorships</a>
@@ -267,15 +362,15 @@
         <div class="footer__link--wrapper">
           <div class="footer__link--items">
             <h2>Social Media</h2>
-            <a href="https://www.facebook.com/fsulphie/" target="_blank"
+            <a href="https://www.facebook.com/fsulphie/" target="_blank" rel="noopener noreferrer"
               >Facebook</a
             >
-            <a href="https://www.instagram.com/fsulphie/" target="_blank"
+            <a href="https://www.instagram.com/fsulphie/" target="_blank" rel="noopener noreferrer"
               >Instagram</a
             >
             <a
               href="https://www.linkedin.com/company/lambda-phi-epsilon-fsu/about/"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               >LinkedIn</a
             >
           </div>
@@ -283,13 +378,13 @@
       </div>
       <section class="social__media">
         <div class="social__media--wrap">
-          <p class="website__rights">© 2025 FSU Lambda Phi Epsilon</p>
+          <p class="website__rights">© 2026 FSU Lambda Phi Epsilon</p>
           <p class="website__rights">Site by Cullen Hemsouvanh and Charlie Lu</p>
           <div class="social__icons">
             <a
               class="social__icon--link"
               href="https://www.facebook.com/fsulphie/"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               aria-label="Facebook"
             >
               <i class="fab fa-facebook"></i>
@@ -297,7 +392,7 @@
             <a
               class="social__icon--link"
               href="https://www.instagram.com/fsulphie/"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               aria-label="Instagram"
             >
               <i class="fab fa-instagram"></i>
@@ -305,7 +400,7 @@
             <a
               class="social__icon--link"
               href="https://www.linkedin.com/company/lambda-phi-epsilon-fsu/about/"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               aria-label="LinkedIn"
             >
               <i class="fab fa-linkedin"></i>
@@ -317,9 +412,3 @@
     <script src="app.js"></script>
   </body>
 </html>
-
-
-
-
-
-

@@ -120,6 +120,9 @@ function setupCaptionHovers() {
 }
 
 function showTab(tabId) {
+    const target = document.getElementById(tabId);
+    if (!target) return; // page has no tabs (only about-us.html does)
+
     // Hide all tab content
     const tabContents = document.querySelectorAll('.tab-content');
     tabContents.forEach(content => content.classList.remove('active'));
@@ -129,11 +132,11 @@ function showTab(tabId) {
     tabs.forEach(tab => tab.classList.remove('active'));
 
     // Show the selected tab content
-    document.getElementById(tabId).classList.add('active');
+    target.classList.add('active');
 
     // Activate the clicked tab
     const activeTab = document.querySelector(`.tab[onclick="showTab('${tabId}')"]`);
-    activeTab.classList.add('active');
+    if (activeTab) activeTab.classList.add('active');
 
     // Initialize slider and caption hovers when tab1 is shown
     if (tabId === 'tab1') {
@@ -173,21 +176,30 @@ showSlide1(currentSlide1);
 showSlide2(currentSlide2);
 showSlide3(currentSlide3);
 
-const faqs = document.querySelectorAll(".faq");
+// Accordions: click to toggle, plus keyboard access for the same control.
+function setupAccordions(selector) {
+    document.querySelectorAll(selector).forEach((item) => {
+        item.setAttribute("role", "button");
+        item.setAttribute("tabindex", "0");
+        item.setAttribute("aria-expanded", "false");
 
-faqs.forEach((faq) => {
-    faq.addEventListener("click", () => {
-        faq.classList.toggle("active");
+        const toggle = () => {
+            item.classList.toggle("active");
+            item.setAttribute("aria-expanded", item.classList.contains("active"));
+        };
+
+        item.addEventListener("click", toggle);
+        item.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault(); // Space would otherwise scroll the page
+                toggle();
+            }
+        });
     });
-});
+}
 
-const faqs1 = document.querySelectorAll(".faq1");
-
-faqs1.forEach((faq1) => {
-    faq1.addEventListener("click", () => {
-        faq1.classList.toggle("active");
-    });
-});
+setupAccordions(".faq");
+setupAccordions(".faq1");
 
 document.querySelectorAll('.flip-container').forEach(container => {
     container.addEventListener('click', function () {
